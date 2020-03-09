@@ -1,14 +1,16 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    @user = User.find(current_user.id) #headerのユーザー名として定義
+    @current_user = User.find(current_user.id) #headerのユーザー名として定義
   end
 
   def show
+    @current_user = User.find(current_user.id)
     @user = User.find(params[:id])
   end
 
   def edit
+    @current_user = User.find(current_user.id)
     @user = User.find(params[:id])
     if @user.id == current_user.id
     else redirect_to books_path
