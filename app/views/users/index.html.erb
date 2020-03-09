@@ -1,8 +1,19 @@
-<h1>Users#index</h1>
-
-  <% @users.each do |u| %>
-    <%= attachment_image_tag(u, :image, :fill, 100, 100, fallback: "no_image.jpg") %>
-    <%= u.name %>
-  <% end %>
+<div class="container">
+  <div class="low">
+    <div class="col-xs-12">
+    <% @users.each do |u| %>
+      <div class="low">
+        <div class="col-xs-3">
+          <%= link_to user_path(u.id) do %>
+            <%= attachment_image_tag(u, :image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %><br>
+            <%= u.name %><br>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    </div>
 <h1>Users#index</h1>
 <p>Find me in app/views/users/index.html.erb</p>
+
+  </div>
+</div>
