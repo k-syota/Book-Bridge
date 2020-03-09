@@ -19,9 +19,10 @@
           <ul class="nav navbar-nav navbar-right">
             <!--if文でサインインとアウト時の表示を変更-->
             <% if user_signed_in? %>
-            <li><%= link_to ' home', user_path(current_user), class: 'glyphicon glyphicon-home home' %></li>
-            <li><%= link_to ' users', users_path, class: 'glyphicon glyphicon-user users' %></li>
-            <li><%= link_to ' books', books_path, class: 'glyphicon glyphicon-book books' %></li>
+            <li><%= link_to @user.name, user_path(@user.id) %></li>
+            <li><%= link_to ' 新規投稿', new_book_path, class: 'glyphicon glyphicon-pencil 新規投稿' %></li>
+            <li><%= link_to ' ユーザー一覧', users_path, class: 'glyphicon glyphicon-user ユーザー一覧' %></li>
+            <li><%= link_to ' Book一覧', books_path, class: 'glyphicon glyphicon-book Book一覧' %></li>
             <li><%= link_to ' logout', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
             <% else %>
             <li><%#å link_to ' home', root_path, class: 'glyphicon glyphicon-home home' %></li>
