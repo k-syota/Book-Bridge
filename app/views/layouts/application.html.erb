@@ -9,11 +9,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <%# headerの記載 %>
-    <header class="navbar navbar-fixed-top navbar-inverse">
+    <header class="navbar navbar-fixed-top" style="background-color: #99FF33;">
       <div class="container">
 
         <nav class="nav navbar-nav navbar-left">
-          <span>Bookers</span>
+          <span>Book-Bridge</span>
         </nav>
         <nav>
           <ul class="nav navbar-nav navbar-right">
@@ -24,7 +24,7 @@
             <li><%= link_to ' books', books_path, class: 'glyphicon glyphicon-book books' %></li>
             <li><%= link_to ' logout', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
             <% else %>
-            <li><%= link_to ' home', root_path, class: 'glyphicon glyphicon-home home' %></li>
+            <li><%#å link_to ' home', root_path, class: 'glyphicon glyphicon-home home' %></li>
             <li><%= link_to ' sign up', new_user_registration_path, class: 'glyphicon glyphicon-edit sign_up' %></li>
             <li><%= link_to ' login', new_user_session_path, class: 'glyphicon glyphicon-log-in sign_in' %></li>
             <% end %>
