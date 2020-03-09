@@ -2,6 +2,8 @@
   <div class="row">
     <%= render 'users/info', user: @user %>
 
+    <%= link_to "edit", edit_user_path(@user) %>
+
     <h1>Users#show</h1>
     <p>Find me in app/views/users/show.html.erb</p>
   </div>
