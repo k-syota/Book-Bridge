@@ -19,6 +19,8 @@
           <% @books.each do |book| %>
           <tr>
             <td><%= book.name %></td>
+            <td><%= book.author.name%></td>
+
           </tr>
           <% end %>
         </tbody>

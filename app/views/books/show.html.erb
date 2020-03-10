@@ -1,9 +1,47 @@
 <div class="container">
   <div class="low">
-    <h4>本のタイトル</h4>
+    <div class="col-xs-6">
+    <table class="table table-hover table-inverse">
+      <tbody>
+        <tr>
+          <td>本のタイトル</td>
+          <td><%= @book.name %></td>
+        </tr>
+        <tr>
+          <td>著者名</td>
+          <td><%= @book.author.name %></td>
+        </tr>
+      </tbody>
+    </table>
+<!--    <h4>本のタイトル</h4>
     <%= @book.name %>
     <h4>著者名</h4>
-    <%= @book.author.name %>
+    <%= @book.author.name %>  -->
+    </div>
+  </div>
+  <div class="low">
+    <div class="col-xs-9">
+    <table class="table table-hover table-inverse">
+      <thead>
+        <tr>
+          <th>ユーザー</th>
+          <th>レビュー</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @review.each do |r| %>
+        <tr>
+          <td>
+            <%= attachment_image_tag(r.user, :image, :fill, 100, 100,
+                format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
+            <%= r.user.name%>
+          </td>
+          <td><%= r.title %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
   </div>
 </div>
 

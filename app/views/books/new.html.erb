@@ -3,10 +3,16 @@
     <%= form_for @book do |f| %>
         <%= f.label :本のタイトル %>
         <%= f.text_field :name %>
-          <%= fields_for @author do |author| %>
-            <%= author.label :著者名 %>
-            <%= author.text_field :name %>
-          <% end %>
+        <%= fields_for @author do |a| %>　<%# fields_forメソッドで異なるモデルにデータを送信する%>
+          <%= a.label :著者名 %>
+          <%= a.text_field :name %>
+        <% end %>
+        <%= fields_for @review do |r| %>
+          <%= r.label :レビュータイトル %>
+          <%= r.text_field :title %>
+          <%= r.label :本文 %>
+          <%= r.text_area :text %>
+        <% end %>
       <%= f.submit "投稿"%>
     <% end %>
   </div>

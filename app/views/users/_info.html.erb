@@ -1,7 +1,8 @@
 <h2>ユーザー詳細</h2>
 
 <table class="table">
-    <tr><%= attachment_image_tag(user, :image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
+    <tr><%= attachment_image_tag(user, :image, :fill, 100, 100,
+    format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %></tr>
 
     <tr>
       <th>name</th>
