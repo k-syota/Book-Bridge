@@ -1,5 +1,7 @@
 class AuthorsController < ApplicationController
   def create
+    @book = Book.find(params[:book_id])
+    @author = @boo.author.new(author_params)
   end
 
   def index
@@ -16,4 +18,10 @@ class AuthorsController < ApplicationController
 
   def destroy
   end
+
+  private
+  def author_params
+    params.require(:author).permit(:name, :book_id)
+  end
+
 end

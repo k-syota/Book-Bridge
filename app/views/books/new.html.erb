@@ -1,2 +1,12 @@
+<div class="container">
+  <div class="low">
+    <%= form_for @book do |f| %>
+      <%= f.label :本のタイトル %>
+      <%= f.text_field :name %>
+      <%= f.submit "投稿"%>
+    <% end %>
+  </div>
+</div>
+
 <h1>Books#new</h1>
 <p>Find me in app/views/books/new.html.erb</p>
