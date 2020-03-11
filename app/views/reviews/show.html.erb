@@ -1,2 +1,26 @@
+<div class="container">
+  <div class="low">
+    <div class="col-xs-3">
+    <%# render 'user/info', user: @user %>
+    </div>
+    <div class="col-xs-9">
+      <table class="table table-hover table-inverse">
+        <div class="col-xs-4">
+        <tr>
+          <td class="success">本のタイトル</td>
+          <td><%= @review.book.name %></td>
+        </tr>
+        </div>
+        <tr>
+          <td class="success">レビュータイトル</td>
+          <td><%= @review.title %></td>
+        </tr>
+      </table>
+      <h2>レビュー本文</h2>
+      <%= @review.text %>
+    </div>
+  </div>
+</div>
+
 <h1>Reviews#show</h1>
 <p>Find me in app/views/reviews/show.html.erb</p>

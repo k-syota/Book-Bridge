@@ -4,23 +4,21 @@
     <table class="table table-hover table-inverse">
       <tbody>
         <tr>
-          <td>本のタイトル</td>
+          <td class="success">本のタイトル</td>
           <td><%= @book.name %></td>
         </tr>
         <tr>
-          <td>著者名</td>
+          <td class="success">著者名</td>
           <td><%= @book.author.name %></td>
         </tr>
       </tbody>
     </table>
-<!--    <h4>本のタイトル</h4>
-    <%= @book.name %>
-    <h4>著者名</h4>
-    <%= @book.author.name %>  -->
     </div>
   </div>
+  <%# レビュー一覧表示%>
   <div class="low">
     <div class="col-xs-9">
+    <h2>レビュー一覧</h2>
     <table class="table table-hover table-inverse">
       <thead>
         <tr>
@@ -36,13 +34,16 @@
                 format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
             <%= r.user.name%>
           </td>
-          <td><%= r.title %></td>
+          <td><%= link_to book_review_path(r) do %>
+            <%= r.title %><% end %>
+          </td>
         </tr>
         <% end %>
       </tbody>
     </table>
   </div>
   </div>
+  <%# レビュー一覧表示%>
 </div>
 
 <h1>Books#show</h1>
