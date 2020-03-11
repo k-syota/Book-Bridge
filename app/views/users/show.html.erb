@@ -16,11 +16,11 @@
           </tr>
         </thead>
         <tbody>
-          <% @books.each do |book| %>
+          <% @books.each do |b| %>
           <tr>
-            <td><%= book.name %></td>
-            <td><%= book.author.name%></td>
-
+            <td><%= b.user.name %></td>
+            <td><%= b.author.name%></td>
+            <td><%# b.review.title %></td>
           </tr>
           <% end %>
         </tbody>

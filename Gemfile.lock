@@ -211,6 +211,8 @@ GEM
     ruby2_keywords (0.0.2)
     ruby_dep (1.5.0)
     rubyzip (2.2.0)
+    safe_attributes (1.0.10)
+      activerecord (>= 3.0.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -289,6 +291,7 @@ DEPENDENCIES
   ratyrate
   refile!
   refile-mini_magick
+  safe_attributes
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
