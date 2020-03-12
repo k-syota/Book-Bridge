@@ -11,6 +11,21 @@
           <td class="success">著者名</td>
           <td><%= @book.author.name %></td>
         </tr>
+        <tr>
+          <% if @book.favorited_by?(current_user) %>
+            <td><li>
+            <%= link_to book_favorites_path(@book, redirect_id: 0), method: :delete do %>
+            <i class="glyphicon glyphicon-folder-close" aria-hidden="true" style="color: red;"></i>
+            <% end %>
+            </li></td>
+          <% else %>
+            <td><li>
+            <%= link_to book_favorites_path(@book, redirect_id: 0), method: :post do %>
+            <i class="glyphicon glyphicon-folder-close" aria-hidden="true"></i>
+            <% end %>
+            </li></td>
+          <% end %>
+        </tr>
       </tbody>
     </table>
     </div>
