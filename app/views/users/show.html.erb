@@ -12,6 +12,7 @@
           <tr class="success">
             <th>本のタイトル</th>
             <th>著者名</th>
+            <th>タグ</th>
             <th>レビュー</th>
           </tr>
         </thead>
@@ -20,6 +21,11 @@
           <tr>
             <td><%= b.user.name %></td>
             <td><%= b.author.name%></td>
+            <td>
+              <%= render 'books/tag_list', tag_list: b.tag_list do %>
+              <%= f.tag_list %>
+              <% end %>
+            </td>
             <td><%# b.review.title %></td>
           </tr>
           <% end %>
