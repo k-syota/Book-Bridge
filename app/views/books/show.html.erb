@@ -27,7 +27,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @review.each do |r| %>
+        <% @book.reviews.each do |r| %>
         <tr>
           <td>
             <%= attachment_image_tag(r.user, :image, :fill, 100, 100,

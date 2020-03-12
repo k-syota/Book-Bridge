@@ -25,19 +25,20 @@ class BooksController < ApplicationController
   def index
     @current_user = User.find(current_user.id)
     @books = Book.all
+    if params[:tag_name]
+      @books = Book.tagged_with("#{params[:tag_name]}")
+    end
   end
 
   def show
     @current_user = User.find(current_user.id)
     @book = Book.find(params[:id])
-    @review = @book.reviews
-    # @user = @review.user
   end
 
   private
 
   def book_params
-    params.require(:book).permit(:name, :user_id, :author_id)
+    params.require(:book).permit(:name, :user_id, :author_id, :tag_list)
   end
 
   def author_params

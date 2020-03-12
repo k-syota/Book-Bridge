@@ -16,8 +16,10 @@
           <td><%= @review.title %></td>
         </tr>
       </table>
-      <h2>レビュー本文</h2>
-      <%= @review.text %>
+      <h4>レビュー本文</h4>
+      <%= @review.text %><br>
+      <%= link_to "削除", book_review_path(@review.id), method: :delete %>
+      <%= link_to "編集", edit_book_review_path(@review) %>
     </div>
   </div>
 </div>

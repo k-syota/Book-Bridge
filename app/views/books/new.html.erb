@@ -7,7 +7,9 @@
           <%= a.label :著者名 %><br>
           <%= a.text_field :name %><br>
         <% end %>
-        <%= fields_for @review do |r| %>
+        <%= f.label :タグ %>
+        <%= f.text_field :tag_list, value: @book.tag_list.join(',') %>
+        <%= fields_for @review do |r| %><br>
           <%= r.label :レビュータイトル %><br>
           <%= r.text_field :title %><br>
           <%= r.label :本文 %><br>

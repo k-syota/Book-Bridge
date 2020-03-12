@@ -70,3 +70,4 @@ gem 'ratyrate'
 gem 'kaminari'
 gem 'pry-byebug'
 gem 'safe_attributes' #内部処理での名前かぶりを解決
+gem 'acts-as-taggable-on', '~> 6.0'
