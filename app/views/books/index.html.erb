@@ -1,34 +1,32 @@
-<div class="container">
-  <div class="low">
-    <table class="table table-hover table-inverse">
-      <thead>
-        <tr class="success">
-          <th>本のタイトル</th>
-          <th>著者名</th>
-          <th>タグ</th>
-        </tr>
-      </thead>
-      <% @books.each do |f| %>
-      <tbody>
-        <tr>
-          <td>
-            <%= link_to (f) do %>
-              <%= f.name %>
-            <% end %>
-          </td>
-          <td>
-            <%= f.author.name %>
-          </td>
-          <td>
-            <%= render 'books/tag_list', tag_list: f.tag_list do %>
-            <%= f.tag_list %>
-            <% end %>
-          </td>
-        </tr>
-      </tbody>
-      <% end %>
-    </table>
-  </div>
+<div class="low">
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr class="success">
+        <th>本のタイトル</th>
+        <th>著者名</th>
+        <th>タグ</th>
+      </tr>
+    </thead>
+    <% @books.each do |f| %>
+    <tbody>
+      <tr>
+        <td>
+          <%= link_to (f) do %>
+            <%= f.name %>
+          <% end %>
+        </td>
+        <td>
+          <%= f.author.name %>
+        </td>
+        <td>
+          <%= render 'books/tag_list', tag_list: f.tag_list do %>
+          <%= f.tag_list %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
 </div>
 
 <h1>Books#index</h1>

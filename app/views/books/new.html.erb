@@ -1,24 +1,23 @@
-<div class="container">
-  <div class="low">
-    <%= form_for @book do |f| %>
-        <%= f.label :本のタイトル %><br>
-        <%= f.text_field :name %><br>
-        <%= fields_for @author do |a| %>　<%# fields_forメソッドで異なるモデルにデータを送信する%>
-          <%= a.label :著者名 %><br>
-          <%= a.text_field :name %><br>
-        <% end %>
-        <%= f.label :タグ %>
-        <%= f.text_field :tag_list, value: @book.tag_list.join(',') %>
-        <%= fields_for @review do |r| %><br>
-          <%= r.label :レビュータイトル %><br>
-          <%= r.text_field :title %><br>
-          <%= r.label :本文 %><br>
-          <%= r.text_area :text %><br>
-        <% end %>
-      <%= f.submit "投稿"%>
-    <% end %>
-  </div>
+<div class="low">
+  <%= form_for @book do |f| %>
+      <%= f.label :本のタイトル %><br>
+      <%= f.text_field :name %><br>
+      <%= fields_for @author do |a| %>　<%# fields_forメソッドで異なるモデルにデータを送信する%>
+        <%= a.label :著者名 %><br>
+        <%= a.text_field :name %><br>
+      <% end %>
+      <%= f.label :タグ %>
+      <%= f.text_field :tag_list, value: @book.tag_list.join(',') %>
+      <%= fields_for @review do |r| %><br>
+        <%= r.label :レビュータイトル %><br>
+        <%= r.text_field :title %><br>
+        <%= r.label :本文 %><br>
+        <%= r.text_area :text %><br>
+      <% end %>
+    <%= f.submit "投稿"%>
+  <% end %>
 </div>
+
 
 
 <h1>Books#new</h1>

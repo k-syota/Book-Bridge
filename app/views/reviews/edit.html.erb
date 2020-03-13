@@ -1,13 +1,11 @@
-<div class="container">
-  <div class="low">
-    <%= form_for(@review, url: book_review_path) do |r| %>
-      <%= r.label :タイトル %>
-      <%= r.text_field :title %><br>
-      <%= r.label :本文 %>
-      <%= r.text_area :text %>
-      <%= r.submit "更新" %>
-    <% end %>
-  </div>
+<div class="low">
+  <%= form_for(@review, url: book_review_path) do |r| %>
+    <%= r.label :タイトル %>
+    <%= r.text_field :title %><br>
+    <%= r.label :本文 %>
+    <%= r.text_area :text %>
+    <%= r.submit "更新" %>
+  <% end %>
 </div>
 
 <h1>Reviews#edit</h1>
