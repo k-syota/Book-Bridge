@@ -2,8 +2,8 @@
 <font color="red"><%= alert %></font>
 
 <div class="row">
-  <div class="col-xs-9 col-xs-offset-1">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="col-xs-9 col-xs-offset-1">
     <h2>ログイン画面</h2>
     <table class="table table-bordered">
       <tr>
@@ -34,5 +34,4 @@
     </div>
   </div>
   <% end %>
-  </div>
 </div>
