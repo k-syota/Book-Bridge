@@ -1,19 +1,39 @@
 <div class="low">
+  <div class="col-xs-10">
   <%= form_for @book do |f| %>
-      <%= f.label :本のタイトル %><br>
-      <%= f.text_field :name %><br>
-      <%= f.label :著者名 %><br>
-      <%= f.text_field :author_list, value: @book.author_list.join(',') %><br>
-      <%= f.label :ジャンル %><br>
-      <%= f.text_area :genre_list, value: @book.genre_list.join(',') %><br>
-      <%= f.label :タグ %><br>
-      <%= f.text_field :tag_list, value: @book.tag_list.join(',') %>
-      <%= fields_for @review do |r| %><br>
-        <%= r.label :レビュータイトル %><br>
-        <%= r.text_field :title %><br>
-        <%= r.label :本文 %><br>
-        <%= r.text_area :text %><br>
+  <table class="table table-bordered table-hover">
+    <tr>
+      <th><%= f.label :本のタイトル %></th>
+      <th><%= f.text_field :name,:size => "50*5" %></th>
+    </tr>
+    <tr>
+      <th><%= f.label :著者名 %></th>
+      <th><%= f.text_field :author_list,:size => "50*5", value: @book.author_list.join(',') %></th>
+    </tr>
+    <tr>
+      <th><%= f.label :ジャンル %></th>
+      <th><%= f.text_field :genre_list,:size => "50*5", value: @book.genre_list.join(',') %></th>
+    </tr>
+    <tr>
+      <th><%= f.label :タグ %></th>
+      <th><%= f.text_field :tag_list,:size => "50*5", value: @book.tag_list.join(',') %></th>
+    </tr>
+  </table>
+  </div>
+  <div class="low">
+    <div class="col-xs-10">
+      <%= fields_for @review do |r| %>
+          <%= r.label :レビュータイトル %>
+          <%= r.text_field :title %><br>
+          <%= r.label :本文 %><br>
+          <%= r.text_area :text,:size => "90*50" %>
       <% end %>
-    <%= f.submit "投稿"%>
+    </div>
+  </div>
+  <div class="low">
+    <div class="col-xs-8">
+        <%= f.submit "投稿"%>
   <% end %>
+    </div>
+  </div>
 </div>

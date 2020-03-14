@@ -17,25 +17,25 @@
         </tr>
       </thead>
       <tbody>
-        <% @books.each do |b| %>
+        <% @books.each do |book| %>
         <tr>
-          <td><%= b.user.name %></td>
+          <td><%= book.user.name %></td>
           <td>
-          <%= render 'books/author_list', author_list: b.author_list do %>
-            <%= b.author_list %>
+          <%= render 'books/author_list', author_list: book.author_list do %>
+            <%= book.author_list %>
           <% end %>
           </td>
           <td>
-          <%= render 'books/genre_list', genre_list: b.genre_list do %>
-            <%= b.genre_list %>
+          <%= render 'books/genre_list', genre_list: book.genre_list do %>
+            <%= book.genre_list %>
           <% end %>
           </td>
           <td>
-          <%= render 'books/tag_list', tag_list: b.tag_list do %>
-            <%= b.tag_list %>
+          <%= render 'books/tag_list', tag_list: book.tag_list do %>
+            <%= book.tag_list %>
           <% end %>
           </td>
-          <td><%# b.reviews.text %></td>
+          <td><%# b.reviews.title %></td>
         </tr>
         <% end %>
       </tbody>
