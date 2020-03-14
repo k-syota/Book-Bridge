@@ -5,15 +5,15 @@
     format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %></tr>
 
     <tr>
-      <th>name</th>
+      <th class="success">name</th>
       <th><%= user.name %></th>
     </tr>
 
     <tr>
-      <th>introduction</th>
+      <th class="success">introduction</th>
       <th><%= user.introduction %></th>
     </tr>
     <tr>
-    <th><%= link_to "マイリスト" %></th>
+      <th><%= link_to "マイリスト", favorite_path %></th>
     </tr>
 </table>

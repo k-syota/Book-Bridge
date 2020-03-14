@@ -27,6 +27,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def favorite
+    @current_user = User.find(current_user.id)
+    @user = User.find(params[:id])
+    @favorites = Favorite.where(user_id: @user.id).all
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :introduction, :image, :email)

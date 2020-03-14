@@ -1,0 +1,36 @@
+<div class="low">
+  <h2>マイリスト一覧</h2>
+  <table class="table table-hover table-inverse">
+    <thead>
+      <tr>
+        <th>タイトル</th>
+        <th>著者名</th>
+        <th>ジャンル</th>
+        <th>タグ</th>
+      </tr>
+    </thead>
+    <% @favorites.each do |f| %>
+      <% book = Book.find(f.book_id) %>
+      <tbody>
+        <tr>
+          <td><%= book.name %></td>
+          <td>
+            <%= render 'books/tag_list', tag_list: book.author_list do %>
+            <%= book.author_list %>
+            <% end %>
+          </td>
+          <td>
+            <%= render 'books/tag_list', tag_list: book.genre_list do %>
+            <%= book.genre_list %>
+            <% end %>
+          </td>
+          <td>
+            <%= render 'books/tag_list', tag_list: book.tag_list do %>
+            <%= book.tag_list %>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
+</div>
