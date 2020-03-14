@@ -4,6 +4,7 @@
       <tr class="success">
         <th>本のタイトル</th>
         <th>著者名</th>
+        <th>ジャンル</th>
         <th>タグ</th>
       </tr>
     </thead>
@@ -16,7 +17,14 @@
           <% end %>
         </td>
         <td>
-          <%= f.author.name %>
+          <%= render 'books/author_list', author_list: f.author_list do %>
+          <%= f.author_list %>
+          <% end %>
+        </td>
+        <td>
+          <%= render 'books/genre_list', genre_list: f.genre_list do %>
+          <%= f.genre_list %>
+          <% end %>
         </td>
         <td>
           <%= render 'books/tag_list', tag_list: f.tag_list do %>

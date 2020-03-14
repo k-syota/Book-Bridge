@@ -11,6 +11,7 @@
         <tr class="success">
           <th>本のタイトル</th>
           <th>著者名</th>
+          <th>ジャンル</th>
           <th>タグ</th>
           <th>レビュー</th>
         </tr>
@@ -19,13 +20,22 @@
         <% @books.each do |b| %>
         <tr>
           <td><%= b.user.name %></td>
-          <td><%= b.author.name%></td>
           <td>
-            <%= render 'books/tag_list', tag_list: b.tag_list do %>
-            <%= f.tag_list %>
-            <% end %>
+          <%= render 'books/author_list', author_list: b.author_list do %>
+            <%= b.author_list %>
+          <% end %>
           </td>
-          <td><%# b.review.title %></td>
+          <td>
+          <%= render 'books/genre_list', genre_list: b.genre_list do %>
+            <%= b.genre_list %>
+          <% end %>
+          </td>
+          <td>
+          <%= render 'books/tag_list', tag_list: b.tag_list do %>
+            <%= b.tag_list %>
+          <% end %>
+          </td>
+          <td><%# b.reviews.text %></td>
         </tr>
         <% end %>
       </tbody>

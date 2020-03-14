@@ -2,11 +2,11 @@
   <%= form_for @book do |f| %>
       <%= f.label :本のタイトル %><br>
       <%= f.text_field :name %><br>
-      <%= fields_for @author do |a| %>　<%# fields_forメソッドで異なるモデルにデータを送信する%>
-        <%= a.label :著者名 %><br>
-        <%= a.text_field :name %><br>
-      <% end %>
-      <%= f.label :タグ %>
+      <%= f.label :著者名 %><br>
+      <%= f.text_field :author_list, value: @book.author_list.join(',') %><br>
+      <%= f.label :ジャンル %><br>
+      <%= f.text_area :genre_list, value: @book.genre_list.join(',') %><br>
+      <%= f.label :タグ %><br>
       <%= f.text_field :tag_list, value: @book.tag_list.join(',') %>
       <%= fields_for @review do |r| %><br>
         <%= r.label :レビュータイトル %><br>
