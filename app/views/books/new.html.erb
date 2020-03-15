@@ -3,11 +3,11 @@
   <%= form_for @book do |f| %>
   <table class="table table-bordered table-hover">
     <tr>
-      <th class="success"><%= f.label :本のタイトル %></th>
+      <th class="info"><%= f.label :本のタイトル %></th>
       <th><%= f.text_field :name,:size => "50*5" %></th>
     </tr>
     <tr>
-      <th class="success"><%= f.label :著者名 %></th>
+      <th class="info"><%= f.label :著者名 %></th>
       <th>
         <%= f.text_field :author_list,
             :size => "50*5", value: @book.author_list.join(',')
@@ -15,23 +15,23 @@
       </th>
     </tr>
     <tr>
-      <th class="success"><%= f.label :ジャンル %></th>
+      <th class="info"><%= f.label :ジャンル %></th>
       <th>
         <%= f.text_field :genre_list,
-              :placeholder => "２つ以上書く場合は[,]で分けて記入して下さい",
+              :placeholder => "２つ以上書く場合は[ , ]で分けて記入して下さい",
               :size => "50*5", value: @book.genre_list.join(',')
         %>
-        例:小説,ビジネス書
+        例：小説,ビジネス書
       </th>
     </tr>
     <tr>
-      <th class="success"><%= f.label :タグ %></th>
+      <th class="info"><%= f.label :タグ %></th>
       <th>
         <%= f.text_field :tag_list,
-            :placeholder => "２つ以上書く場合は[,]で分けて記入して下さい",
+            :placeholder => "２つ以上書く場合は[ , ]で分けて記入して下さい",
             :size => "50*5", value: @book.tag_list.join(',')
         %>
-        例:ミステリー,ホラー,Ruby
+        例：ミステリー,ホラー,Ruby
       </th>
     </tr>
   </table>
@@ -45,7 +45,7 @@
       <% end %>
     </div>
   </div>
-  <%= f.submit "投稿",class: "btn btn-info btn-sm"%>
+  <%= f.submit "投稿",class: "btn btn-primary btn-sm"%>
   <% end %>
   </div>
 </div>

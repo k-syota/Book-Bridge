@@ -7,7 +7,7 @@
     <h2>ログイン画面</h2>
     <table class="table table-bordered">
       <tr>
-        <th class="success">
+        <th class="info">
           <%= f.label :ユーザー名 %>
         </th>
         <th>
@@ -18,7 +18,7 @@
       </tr>
 
       <tr>
-        <th class="success">
+        <th class="info">
           <%= f.label :パスワード %>
         </th>
         <th>
@@ -29,7 +29,7 @@
   </div>
   <div class="row">
     <div class="actions col-xs-2 col-xs-offset-5">
-      <%= f.submit "ログイン",class:"btn btn-info" %>
+      <%= f.submit "ログイン",class:"btn btn-primary" %>
       <%= render "devise/shared/links" %>
     </div>
   </div>

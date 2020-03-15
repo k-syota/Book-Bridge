@@ -3,11 +3,11 @@
   <table class="table table-hover table-inverse">
     <tbody>
       <tr>
-        <td class="success">本のタイトル</td>
+        <td class="info">本のタイトル</td>
         <td><%= @book.name %></td>
       </tr>
       <tr>
-        <td class="success">著者名</td>
+        <td class="info">著者名</td>
         <td><%= @book.author_list %></td>
       </tr>
     </tbody>
@@ -20,7 +20,7 @@
         <% else %>
           <%= link_to "マイリストに追加",
               book_favorites_path(@book, redirect_id: 0),
-              method: :post,class: "btn btn-info btn-sm"
+              method: :post,class: "btn btn-primary btn-sm"
           %>
         <% end %>
   </div>
@@ -31,7 +31,7 @@
   <h2>レビュー一覧</h2>
   <table class="table table-hover table-inverse">
     <thead>
-      <tr class="success">
+      <tr class="info">
         <th>ユーザー</th>
         <th>レビュー</th>
       </tr>

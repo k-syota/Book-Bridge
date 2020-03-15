@@ -6,7 +6,7 @@
     <%= render "devise/shared/error_messages", resource: resource %>
     <table class="table table-bordered">
       <tr>
-        <th class="success">ユーザー名</th>
+        <th class="info">ユーザー名</th>
         <th>
           <div class="field">
             <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
@@ -14,7 +14,7 @@
         </th>
       </tr>
       <tr>
-        <th class="success">メールアドレス</th>
+        <th class="info">メールアドレス</th>
         <th>
           <div class="field">
             <%= f.email_field :email, autofocus: true, autocomplete: "email",:size => "50*30" %>
@@ -23,7 +23,7 @@
       </tr>
 
       <tr>
-        <th class="success">パスワード</th>
+        <th class="info">パスワード</th>
         <th>
           <div class="field">
             <%= f.password_field :password, autocomplete: "new-password",:size => "50*30" %>
@@ -32,7 +32,7 @@
       </tr>
 
       <tr>
-        <th class="success">パスワード確認</th>
+        <th class="info">パスワード確認</th>
         <th>
           <div class="field">
             <%= f.password_field :password_confirmation, autocomplete: "new-password",:size => "50*30" %>
@@ -42,7 +42,7 @@
     </table>
     <div class="row">
       <div class="actions col-xs-2 col-xs-offset-5">
-      <%= f.submit "新規登録",class:"btn btn-info" %>
+      <%= f.submit "新規登録",class:"btn btn-primary" %>
     </div>
     <% end %>
   </div>
