@@ -36,7 +36,7 @@
     </tr>
   </table>
   <div class="low">
-    <div class="col-xs-12">
+    <div class="col-xs-8">
       <%= fields_for @review do |r| %>
           <%= r.label :レビュータイトル %>
           <%= r.text_field :title,:size => "50*5" %><br>
@@ -45,7 +45,7 @@
       <% end %>
     </div>
   </div>
-  <%= f.submit "投稿",class: "btn btn-primary btn-sm"%>
+  <%= f.submit "投稿",class: "btn btn-primary btn-block"%>
   <% end %>
   </div>
 </div>

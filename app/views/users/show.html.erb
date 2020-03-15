@@ -1,8 +1,8 @@
 <div class="low">
   <div class="col-xs-3">
     <%= render 'users/info', user: @user %>
-    <% if @user == current_user %>
-    <%= link_to "edit", edit_user_path(@user),class: "btn btn-primary btn-sm" %>
+    <% if @user == current_user %><br>
+    <%= link_to "edit", edit_user_path(@user),class: "btn btn-primary btn-block" %>
     <% end %>
   </div>
   <div class="col-xs-9">
