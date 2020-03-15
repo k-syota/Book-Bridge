@@ -27,10 +27,14 @@
       <%= link_to "本の詳細に戻る", book_path(@book),class: "btn btn-primary btn-sm" %>
     </div>
     <div class="col-xs-1 col-xs-offset-1">
+      <% if @review.user_id == current_user.id %>
       <%= link_to "編集", edit_book_review_path(@review),class: "btn btn-primary btn-sm" %>
+      <% end %>
     </div>
     <div class="col-xs-1 col-xs-offset-4">
+      <% if @review.user_id == current_user.id %>
       <%= link_to "削除", book_review_path(@review), method: :delete,class: "btn btn-danger btn-sm" %>
+      <% end %>
     </div>
   </div>
 </div>

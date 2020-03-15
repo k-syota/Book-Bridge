@@ -46,7 +46,7 @@
             <%= r.user.name%>
           <% end %>
         </td>
-        <td><%= link_to book_review_path(r) do %>
+        <td><%= link_to book_review_path(@book, r) do %> <%# @bookでbook_idをrでreview_idを引数として持ってくる%>
           <%= r.title %><% end %>
         </td>
       </tr>
