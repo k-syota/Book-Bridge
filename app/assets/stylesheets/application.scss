@@ -19,6 +19,8 @@
 
 header {
   color: black;
+  background: image-url('book_image5.jpg');
+  // background-size: cover;
 }
 
 header .navbar-left span {
@@ -28,6 +30,8 @@ header .navbar-left span {
 
 body {
   margin-top: 100px;
+  // background: image-url('book_image7.jpg');
+  // background-size: cover;
 }
 
 .actions {
