@@ -3,37 +3,49 @@
   <%= form_for @book do |f| %>
   <table class="table table-bordered table-hover">
     <tr>
-      <th><%= f.label :本のタイトル %></th>
+      <th class="success"><%= f.label :本のタイトル %></th>
       <th><%= f.text_field :name,:size => "50*5" %></th>
     </tr>
     <tr>
-      <th><%= f.label :著者名 %></th>
-      <th><%= f.text_field :author_list,:size => "50*5", value: @book.author_list.join(',') %></th>
+      <th class="success"><%= f.label :著者名 %></th>
+      <th>
+        <%= f.text_field :author_list,
+            :size => "50*5", value: @book.author_list.join(',')
+        %>
+      </th>
     </tr>
     <tr>
-      <th><%= f.label :ジャンル %></th>
-      <th><%= f.text_field :genre_list,:size => "50*5", value: @book.genre_list.join(',') %></th>
+      <th class="success"><%= f.label :ジャンル %></th>
+      <th>
+        <%= f.text_field :genre_list,
+              :placeholder => "２つ以上書く場合は[,]で分けて記入して下さい",
+              :size => "50*5", value: @book.genre_list.join(',')
+        %>
+        例:小説,ビジネス書
+      </th>
     </tr>
     <tr>
-      <th><%= f.label :タグ %></th>
-      <th><%= f.text_field :tag_list,:size => "50*5", value: @book.tag_list.join(',') %></th>
+      <th class="success"><%= f.label :タグ %></th>
+      <th>
+        <%= f.text_field :tag_list,
+            :placeholder => "２つ以上書く場合は[,]で分けて記入して下さい",
+            :size => "50*5", value: @book.tag_list.join(',')
+        %>
+        例:ミステリー,ホラー,Ruby
+      </th>
     </tr>
   </table>
-  </div>
   <div class="low">
-    <div class="col-xs-10">
+    <div class="col-xs-12">
       <%= fields_for @review do |r| %>
           <%= r.label :レビュータイトル %>
-          <%= r.text_field :title %><br>
+          <%= r.text_field :title,:size => "50*5" %><br>
           <%= r.label :本文 %><br>
           <%= r.text_area :text,:size => "90*50" %>
       <% end %>
     </div>
   </div>
-  <div class="low">
-    <div class="col-xs-8">
-        <%= f.submit "投稿"%>
+  <%= f.submit "投稿"%>
   <% end %>
-    </div>
   </div>
 </div>

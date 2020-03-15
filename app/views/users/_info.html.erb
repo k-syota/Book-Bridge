@@ -2,15 +2,15 @@
 
 <table class="table">
     <tr><%= attachment_image_tag(user, :image, :fill, 100, 100,
-    format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %></tr>
-
+    format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
+    </tr>
     <tr>
-      <th class="success">name</th>
+      <th class="success">ユーザー名</th>
       <th><%= user.name %></th>
     </tr>
 
     <tr>
-      <th class="success">introduction</th>
+      <th class="success">自己紹介</th>
       <th><%= user.introduction %></th>
     </tr>
     <tr>

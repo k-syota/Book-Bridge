@@ -8,6 +8,8 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:book_id])
+    @user = @review.user
+    # binding.pry
     @current_user = User.find(current_user.id)
   end
 
@@ -17,16 +19,16 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find(params[:id])
+    @review = Review.find(params[:book_id])
     @review.update(review_params)
     redirect_to book_review_path(@review.id)
   end
 
   def destroy
-    @review = Review.find(:id)
-    @book = Book.find(:book_id)
+    @review = Review.find(params[:book_id])
+    @book = Book.find(params[:id])
     @review.destroy
-    redirect_to book_path(@book.id)
+    redirect_to book_path(@book)
   end
 
   private
