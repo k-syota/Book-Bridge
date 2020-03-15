@@ -2,7 +2,7 @@
   <div class="col-xs-3">
     <%= render 'users/info', user: @user %>
     <% if @user == current_user %>
-    <%= link_to "edit", edit_user_path(@user) %>
+    <%= link_to "edit", edit_user_path(@user),class: "btn btn-info btn-sm" %>
     <% end %>
   </div>
   <div class="col-xs-9">
@@ -17,25 +17,33 @@
         </tr>
       </thead>
       <tbody>
-        <% @books.each do |book| %>
+        <% @review.each do |r| %>
         <tr>
-          <td><%= book.user.name %></td>
           <td>
-          <%= render 'books/author_list', author_list: book.author_list do %>
-            <%= book.author_list %>
+            <%= link_to book_path(r.id) do %>
+              <%= r.book.name %>
+            <% end %>
+          </td>
+          <td>
+          <%= render 'books/author_list', author_list: r.book.author_list do %>
+            <%= r.book.author_list %>
           <% end %>
           </td>
           <td>
-          <%= render 'books/genre_list', genre_list: book.genre_list do %>
-            <%= book.genre_list %>
+          <%= render 'books/genre_list', genre_list: r.book.genre_list do %>
+            <%= r.book.genre_list %>
           <% end %>
           </td>
           <td>
-          <%= render 'books/tag_list', tag_list: book.tag_list do %>
-            <%= book.tag_list %>
+          <%= render 'books/tag_list', tag_list: r.book.tag_list do %>
+            <%= r.book.tag_list %>
           <% end %>
           </td>
-          <td><%# b.reviews.title %></td>
+          <td>
+            <%= link_to book_review_path(r.id) do %>
+              <%= r.title %>
+            <% end %>
+          </td>
         </tr>
         <% end %>
       </tbody>

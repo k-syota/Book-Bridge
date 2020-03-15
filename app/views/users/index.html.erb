@@ -4,8 +4,14 @@
     <div class="low">
       <div class="col-xs-3">
         <%= link_to user_path(u.id) do %>
-          <%= attachment_image_tag(u, :image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %><br>
-          <%= u.name %><br>
+        <table>
+          <thead></thead>
+            <th><%= attachment_image_tag(u, :image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %></th>
+          </thead>
+          <tbody>
+            <td><%= u.name %></td>
+          </tbody>
+        </table>
         <% end %>
       </div>
     </div>

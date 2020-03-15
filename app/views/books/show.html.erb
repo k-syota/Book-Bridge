@@ -1,5 +1,5 @@
 <div class="low">
-  <div class="col-xs-6">
+  <div class="col-xs-9 col-xs-offset-2">
   <table class="table table-hover table-inverse">
     <tbody>
       <tr>
@@ -10,32 +10,28 @@
         <td class="success">著者名</td>
         <td><%= @book.author_list %></td>
       </tr>
-      <tr>
-        <% if @book.favorited_by?(current_user) %>
-          <td><li>
-          <%= link_to book_favorites_path(@book, redirect_id: 0), method: :delete do %>
-          <i class="glyphicon glyphicon-folder-close" aria-hidden="true" style="color: red;"></i>
-          <% end %>
-          </li></td>
-        <% else %>
-          <td><li>
-          <%= link_to book_favorites_path(@book, redirect_id: 0), method: :post do %>
-          <i class="glyphicon glyphicon-folder-close" aria-hidden="true"></i>
-          <% end %>
-          </li></td>
-        <% end %>
-      </tr>
     </tbody>
   </table>
+        <% if @book.favorited_by?(current_user) %>
+          <%= link_to "マイリストから外す",
+              book_favorites_path(@book, redirect_id: 0),
+              method: :delete,class: "btn btn-danger btn-sm"
+          %>
+        <% else %>
+          <%= link_to "マイリストに追加",
+              book_favorites_path(@book, redirect_id: 0),
+              method: :post,class: "btn btn-info btn-sm"
+          %>
+        <% end %>
   </div>
 </div>
 <%# レビュー一覧表示%>
 <div class="low">
-  <div class="col-xs-9">
+  <div class="col-xs-9 col-xs-offset-2">
   <h2>レビュー一覧</h2>
   <table class="table table-hover table-inverse">
     <thead>
-      <tr>
+      <tr class="success">
         <th>ユーザー</th>
         <th>レビュー</th>
       </tr>
@@ -44,9 +40,11 @@
       <% @book.reviews.each do |r| %>
       <tr>
         <td>
-          <%= attachment_image_tag(r.user, :image, :fill, 100, 100,
-              format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
-          <%= r.user.name%>
+          <%= link_to user_path(r.user.id) do %>
+            <%= attachment_image_tag(r.user, :image, :fill, 100, 100,
+                format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
+            <%= r.user.name%>
+          <% end %>
         </td>
         <td><%= link_to book_review_path(r) do %>
           <%= r.title %><% end %>
