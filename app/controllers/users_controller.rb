@@ -26,7 +26,8 @@ class UsersController < ApplicationController
     if @user.update(user_params)
         redirect_to user_path(@user.id)
     else
-        redirect_to book_path
+        @current_user = User.find(current_user.id)
+        render "edit"
     end
   end
 
