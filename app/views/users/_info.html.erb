@@ -1,5 +1,4 @@
-<h2>ユーザー詳細</h2>
-
+<div class="name">
 <table class="table">
     <tr><%= attachment_image_tag(user, :image, :fill, 100, 100,
     format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
@@ -14,4 +13,5 @@
       <th><%= user.introduction %></th>
     </tr>
 </table>
-<%= link_to "マイリスト", favorite_path(user),class: "btn btn-primary btn-block" %>
+  <%= link_to "マイリスト", favorite_path(user),class: "btn btn-primary btn-block" %>
+</div>

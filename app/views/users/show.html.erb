@@ -1,9 +1,11 @@
 <div class="low">
   <div class="col-xs-3">
+    <div class="user">ユーザー情報</div>
     <%= render 'users/info', user: @user %>
     <% if @user == current_user %><br>
-    <%= link_to "edit", edit_user_path(@user),class: "btn btn-primary btn-block" %>
-    <% end %>
+    <div class="name">
+    <%= link_to "編集", edit_user_path(@user),class: "btn btn-primary btn-block" %>
+    <% end %></div>
   </div>
   <div class="col-xs-9">
     <table class="table table-hover table-inverse">
@@ -18,7 +20,7 @@
       </thead>
       <tbody>
         <% @reviews.each do |r| %>
-        <tr>
+        <tr class="name">
           <td>
             <%= link_to book_path(r.id) do %>
               <%= r.book.name %>

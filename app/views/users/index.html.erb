@@ -9,7 +9,7 @@
             <th><%= attachment_image_tag(u, :image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %></th>
           </thead>
           <tbody>
-            <td><%= u.name %></td>
+            <td class="name"><%= u.name %></td>
           </tbody>
         </table>
         <% end %>

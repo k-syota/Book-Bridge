@@ -7,22 +7,22 @@
       <% end %>
     </ul>
   <% end %>
-  <div class="col-xs-10 col-xs-offset-1">
+  <div class="review_edit">レビュー編集ページ</div><br>
+  <div class="col-xs-11">
+  <div class="review">
     <%= form_for(@review, url: book_review_path) do |r| %>
     <table class="table table-bordered table-hover">
       <tr>
         <th class="info"><%= r.label :タイトル %></th>
-        <th><%= r.text_field :title %></th>
+        <th><%= r.text_field :title,:size => "90*5" %></th>
       </tr>
       <tr>
         <th class="info"><%= r.label :本文 %></th>
         <th><%= r.text_area :text,:size => "90*5" %></th>
       </tr>
     </table>
-      <%= r.submit "更新",class: "btn btn-primary btn-sm" %>
+      <%= r.submit "更新",class: "btn btn-primary btn-block" %>
     <% end %>
   </div>
+  </div>
 </div>
-
-<h1>Reviews#edit</h1>
-<p>Find me in app/views/reviews/edit.html.erb</p>

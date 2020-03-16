@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    @current_user = User.find(current_user.id) #headerのユーザー名として定義
   end
 
   def show
-    @current_user = User.find(current_user.id)
     @user = User.find(params[:id])
     @reviews = Review.where(user_id: @user.id)
     # @reviews = @user.reviews
@@ -14,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @current_user = User.find(current_user.id)
     @user = User.find(params[:id])
     if @user.id == current_user.id
     else redirect_to books_path
@@ -32,7 +29,6 @@ class UsersController < ApplicationController
   end
 
   def favorite
-    @current_user = User.find(current_user.id)
     @user = User.find(params[:id])
     @favorites = Favorite.where(user_id: @user.id).all
   end

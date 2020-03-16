@@ -11,11 +11,9 @@ class ReviewsController < ApplicationController
     @book = @review.book
     @user = @review.user
     # binding.pry
-    @current_user = User.find(current_user.id)
   end
 
   def edit
-    @current_user = User.find(current_user.id)
     @review = Review.find(params[:id])
   end
 
@@ -24,7 +22,6 @@ class ReviewsController < ApplicationController
     if @review.update(review_params)
        redirect_to book_review_path(@review.id)
     else
-       @current_user = User.find(current_user.id)
        render "edit"
     end
   end

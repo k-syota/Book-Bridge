@@ -1,8 +1,9 @@
 <div class="low">
-  <h2>マイリスト一覧</h2>
+  <div class="user">マイリスト一覧</div>
+  <div class="user_table">
   <table class="table table-hover table-inverse">
     <thead>
-      <tr>
+      <tr class="head">
         <th>タイトル</th>
         <th>著者名</th>
         <th>ジャンル</th>
@@ -12,7 +13,7 @@
     <% @favorites.each do |f| %>
       <% book = Book.find(f.book_id) %>
       <tbody>
-        <tr>
+        <tr class="body">
           <td><%= book.name %></td>
           <td>
             <%= render 'books/tag_list', tag_list: book.author_list do %>
@@ -33,4 +34,5 @@
       </tbody>
       <% end %>
     </table>
+  </div>
 </div>

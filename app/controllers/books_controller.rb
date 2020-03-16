@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
   def new
-    @current_user = User.find(current_user.id)
     @book = Book.new
     @review = Review.new
   end
@@ -9,16 +8,23 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     # @book = current_user.books.new(book_params)
-    @book.save!
-    @review = Review.new(reviews_params)
-    @review.book_id = @book.id
-    @review.user_id = current_user.id
-    @review.save
-    redirect_to book_path(@book)
+    if @book.save
+      @review = Review.new(reviews_params)
+    else
+      @review = Review.new
+      render "new"
+    end
+      @review.book_id = @book.id
+      @review.user_id = current_user.id
+      if @review.save
+          redirect_to book_path(@book)
+      else
+          @review = Review.new
+          render "new"
+      end
   end
 
   def index
-    @current_user = User.find(current_user.id)
     @books = Book.all
     if params[:tag_name]
       @books = Book.tagged_with("#{params[:tag_name]}")
@@ -26,7 +32,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    @current_user = User.find(current_user.id)
     @book = Book.find(params[:id])
   end
 

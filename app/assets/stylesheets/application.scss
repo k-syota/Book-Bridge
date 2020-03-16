@@ -24,9 +24,11 @@ header {
 }
 
 header .navbar-left span {
-  font-size: 30px;
+  font-size: 35px;
+  font-family: cursive;
   padding-top: 10px;
 }
+
 
 body {
   margin-top: 100px;
@@ -34,6 +36,6 @@ body {
   // background-size: cover;
 }
 
-.actions {
-  margin-top:10px;
+.guest {
+  margin-top: 18px;
 }

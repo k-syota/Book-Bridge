@@ -1,7 +1,7 @@
 <div class="low">
-<h2>プロフィール編集ページ</h2>
+<div class="user">プロフィール編集ページ</div>
   <% if @user.errors.any? %>
-    <h3><%= @user.errors.count %>error occurrence</h3><!--エラーメッセ-->
+    <h3><%= @user.errors.count %>error occurrence</h3>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -11,6 +11,7 @@
   <%= attachment_image_tag(@user, :image, :fill, 100, 100, format: 'jpeg',
       class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
   <%= form_for(@user) do |u| %>
+  <div class="user_table">
     <div class="col-xs-3">
       <table class="table">
           <tr><td><%= u.label :プロフィール画像 %></td></tr>
@@ -18,6 +19,7 @@
       </table>
     </div>
     <div class="col-xs-9">
+      <div class="edit">
       <table class="table table-hover table-inverse">
         <tr>
           <th class="info"><%= u.label :ユーザー名 %></th>
@@ -36,4 +38,6 @@
         <%= u.submit "更新",class: "btn btn-primary btn-block" %>
       <% end %>
     </div>
+    </div>
+  </div>
 </div>

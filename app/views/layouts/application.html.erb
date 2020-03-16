@@ -19,13 +19,14 @@
           <ul class="nav navbar-nav navbar-right">
             <!--if文でサインインとアウト時の表示を変更-->
             <% if user_signed_in? %>
-            <li><%= link_to @current_user.name, user_path(@current_user.id) %></li>
+            <li><%= link_to current_user.name, user_path(current_user.id) %></li>
             <li><%= link_to ' 新規投稿', new_book_path, class: 'glyphicon glyphicon-pencil 新規投稿' %></li>
             <li><%= link_to ' ユーザー一覧', users_path, class: 'glyphicon glyphicon-user ユーザー一覧' %></li>
             <li><%= link_to ' Book一覧', books_path, class: 'glyphicon glyphicon-book Book一覧' %></li>
             <li><%= link_to ' logout', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
             <% else %>
-            <li><%#å link_to ' home', root_path, class: 'glyphicon glyphicon-home home' %></li>
+            <li class="guest">こんにちはゲストさん</li>
+            <li><%= link_to ' home', root_path, class: 'glyphicon glyphicon-home home' %></li>
             <li><%= link_to ' sign up', new_user_registration_path, class: 'glyphicon glyphicon-edit sign_up' %></li>
             <li><%= link_to ' login', new_user_session_path, class: 'glyphicon glyphicon-log-in sign_in' %></li>
             <% end %>
