@@ -17,7 +17,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @review.each do |r| %>
+        <% @reviews.each do |r| %>
         <tr>
           <td>
             <%= link_to book_path(r.id) do %>
@@ -40,7 +40,7 @@
           <% end %>
           </td>
           <td>
-            <%= link_to book_review_path(r.id) do %>
+            <%= link_to book_review_path(book_id: @book, review_id: r) do %>
               <%= r.title %>
             <% end %>
           </td>

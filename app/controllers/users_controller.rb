@@ -7,7 +7,10 @@ class UsersController < ApplicationController
   def show
     @current_user = User.find(current_user.id)
     @user = User.find(params[:id])
-    @review = @user.reviews
+    @reviews = Review.where(user_id: @user.id)
+    # @reviews = @user.reviews
+    @book = Book.where(user_id: @user.id)
+    # binding.pry
   end
 
   def edit
@@ -37,4 +40,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :introduction, :image, :email)
   end
+
 end

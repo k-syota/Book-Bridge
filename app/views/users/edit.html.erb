@@ -1,21 +1,26 @@
-<div class="row">
+<div class="low">
 <h2>プロフィール編集ページ</h2>
+  <%= attachment_image_tag(@user, :image, :fill, 100, 100, format: 'jpeg',
+      class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
+  <%= form_for(@user) do |u| %>
     <div class="col-xs-3">
-    <table class="table">
-      <%= attachment_image_tag(@user, :image, :fill, 100, 100, format: 'jpeg',
-          class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
-      <%= form_for(@user) do |u| %>
-        <tr><td><%= u.label :プロフィール画像 %></td></tr>
-        <tr><td><%= u.attachment_field :image %></td></tr>
-    </table>
+      <table class="table">
+          <tr><td><%= u.label :プロフィール画像 %></td></tr>
+          <tr><td><%= u.attachment_field :image %></td></tr>
+      </table>
     </div>
     <div class="col-xs-9">
-        <%= u.label :ユーザー名 %>
-        <%= u.text_field :name, size: "30x2" %><br>
-        <%= u.label :紹介文 %>
-        <%= u.text_area :introduction, size: "90x5" %><br>
-        <%= u.submit "更新",class: "btn btn-primary btn-sm" %>
+      <table class="table table-hover table-inverse">
+        <tr>
+          <th class="info"><%= u.label :ユーザー名 %></th>
+          <th><%= u.text_field :name, size: "30x2" %></th>
+        </tr>
+        <tr>
+          <th class="info"><%= u.label :紹介文 %></th>
+          <th><%= u.text_area :introduction, size: "90x5" %></th>
+        </tr>
+      </table>
+        <%= u.submit "更新",class: "btn btn-primary btn-block" %>
       <% end %>
     </div>
-
 </div>
