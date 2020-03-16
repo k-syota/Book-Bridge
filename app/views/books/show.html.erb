@@ -1,5 +1,7 @@
 <div class="low">
-  <div class="col-xs-9 col-xs-offset-2">
+  <div class="book_show_title">本[<%= @book.name %>]の詳細</div>
+  <div class="book_show">
+  <div class="col-xs-5">
   <table class="table table-hover table-inverse">
     <tbody>
       <tr>
@@ -24,11 +26,12 @@
           %>
         <% end %>
   </div>
-</div>
+  </div>
 <%# レビュー一覧表示%>
-<div class="low">
-  <div class="col-xs-9 col-xs-offset-2">
-  <h2>レビュー一覧</h2>
+
+  <div class="col-xs-7">
+  <div class="book_show_title">レビュー一覧</div>
+  <div class="book_show">
   <table class="table table-hover table-inverse">
     <thead>
       <tr class="info">
@@ -53,7 +56,8 @@
       <% end %>
     </tbody>
   </table>
-</div>
+  </div>
+  </div>
 </div>
 <%# レビュー一覧表示%>
 
