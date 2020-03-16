@@ -1,5 +1,13 @@
 <div class="low">
 <h2>プロフィール編集ページ</h2>
+  <% if @user.errors.any? %>
+    <h3><%= @user.errors.count %>error occurrence</h3><!--エラーメッセ-->
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <%= attachment_image_tag(@user, :image, :fill, 100, 100, format: 'jpeg',
       class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
   <%= form_for(@user) do |u| %>

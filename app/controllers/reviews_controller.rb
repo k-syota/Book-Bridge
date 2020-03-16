@@ -16,13 +16,17 @@ class ReviewsController < ApplicationController
 
   def edit
     @current_user = User.find(current_user.id)
-    @review = Review.find(params[:book_id])
+    @review = Review.find(params[:id])
   end
 
   def update
-    @review = Review.find(params[:book_id])
-    @review.update(review_params)
-    redirect_to book_review_path(@review.id)
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+       redirect_to book_review_path(@review.id)
+    else
+       @current_user = User.find(current_user.id)
+       render "edit"
+    end
   end
 
   def destroy

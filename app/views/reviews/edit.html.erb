@@ -1,4 +1,12 @@
 <div class="low">
+  <% if @review.errors.any? %>
+    <h3><%= @review.errors.count %>error occurrence</h3><!--エラーメッセ-->
+    <ul>
+      <% @review.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <div class="col-xs-10 col-xs-offset-1">
     <%= form_for(@review, url: book_review_path) do |r| %>
     <table class="table table-bordered table-hover">
