@@ -17,7 +17,12 @@
         </tr>
         <tr>
           <th class="info"><%= u.label :紹介文 %></th>
-          <th><%= u.text_area :introduction, size: "90x5" %></th>
+          <th>
+            <%= u.text_area :introduction,
+                :placeholder => "文字数の上限は50文字です",
+                size: "90x5"
+            %>
+          </th>
         </tr>
       </table>
         <%= u.submit "更新",class: "btn btn-primary btn-block" %>

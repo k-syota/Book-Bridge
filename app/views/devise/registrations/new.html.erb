@@ -9,7 +9,10 @@
         <th class="info">ユーザー名</th>
         <th>
           <div class="field">
-            <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+            <%= f.text_field :name,
+                :placeholder => "2~20文字以内で記入してください",
+                autofocus: true, autocomplete: "name",:size => "50*30"
+            %>
           </div>
         </th>
       </tr>
@@ -26,7 +29,10 @@
         <th class="info">パスワード</th>
         <th>
           <div class="field">
-            <%= f.password_field :password, autocomplete: "new-password",:size => "50*30" %>
+            <%= f.password_field :password,
+                :placeholder => "6文字以上の記入を御願いします",
+                autocomplete: "new-password",:size => "50*30"
+            %>
           </div>
         </th>
       </tr>
