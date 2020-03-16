@@ -11,7 +11,6 @@
   <%# headerの記載 %>
     <header class="navbar navbar-fixed-top" style="background-color: #99FF33;">
       <div class="container">
-
         <nav class="nav navbar-nav navbar-left">
           <span>Book-Bridge</span>
         </nav>
@@ -23,7 +22,10 @@
             <li><%= link_to ' 新規投稿', new_book_path, class: 'glyphicon glyphicon-pencil 新規投稿' %></li>
             <li><%= link_to ' ユーザー一覧', users_path, class: 'glyphicon glyphicon-user ユーザー一覧' %></li>
             <li><%= link_to ' Book一覧', books_path, class: 'glyphicon glyphicon-book Book一覧' %></li>
-            <li><%= link_to ' logout', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
+            <li><%= link_to ' logout', destroy_user_session_path,
+                    method: :delete, class: 'glyphicon glyphicon-log-out logout'
+                %>
+            </li>
             <% else %>
             <li class="guest">こんにちはゲストさん</li>
             <li><%= link_to ' home', root_path, class: 'glyphicon glyphicon-home home' %></li>
