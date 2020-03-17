@@ -14,7 +14,11 @@
       <% book = Book.find(f.book_id) %>
       <tbody>
         <tr class="body">
-          <td><%= book.name %></td>
+          <td>
+            <%= link_to book_path(f.book_id) do %>
+            <%= book.name %>
+            <% end %>
+          </td>
           <td>
             <%= render 'books/tag_list', tag_list: book.author_list do %>
             <%= book.author_list %>

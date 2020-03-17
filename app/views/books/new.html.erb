@@ -15,6 +15,7 @@
       <% end %>
     </ul>
   <% end %>
+
   <div class="book_new">
     <div class="col-xs-6">
     <div class="book_write">本の情報記入欄</div><br>
@@ -57,12 +58,8 @@
     <div class="review_new">レビュー記入欄</div><br>
       <div class="col-xs-6">
         <%= fields_for @review do |r| %>
-        <table class="table table-bordered table-hover">
-          <tr>
             <%= r.label :レビュータイトル %>
             <%= r.text_field :title,:size => "50*5" %>
-          </tr>
-        </table>
             <%= r.label :本文 %><br>
             <%= r.text_area :text,size: "65x7" %>
         <% end %>

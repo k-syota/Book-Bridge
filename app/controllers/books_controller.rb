@@ -11,7 +11,6 @@ class BooksController < ApplicationController
       @review = Review.new(reviews_params)
     else
       @review = Review.new
-      render "new"
     end
       @review.book_id = @book.id
       @review.user_id = current_user.id
@@ -19,7 +18,6 @@ class BooksController < ApplicationController
           redirect_to book_path(@book)
       else
           @review = Review.new
-          render "new"
       end
   end
 
