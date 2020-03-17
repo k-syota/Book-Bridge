@@ -20,25 +20,25 @@
 header {
   color: black;
   background: image-url('book_image5.jpg');
-  // background-size: cover;
+  padding-bottom: 10px;
 }
 
 header .navbar-left span {
   font-size: 35px;
   font-family: cursive;
   padding-top: 10px;
-}
-
+}　　
 
 body {
   margin-top: 100px;
-  // background: image-url('book_image7.jpg');
-  // background-size: cover;
 }
-.container {
+
+
+footer .navbar-right{
   font-size: 15px;
   font-family: serif;
 }
+
 
 .guest {
   margin-top: 18px;

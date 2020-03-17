@@ -1,20 +1,17 @@
 <div class="low">
   <div class="col-xs-12">
+  <div class="user_index_name">ユーザー一覧</div>
   <% @users.each do |u| %>
-    <div class="low">
       <div class="col-xs-3">
         <%= link_to user_path(u.id) do %>
         <table>
-          <thead></thead>
             <th><%= attachment_image_tag(u, :image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %></th>
-          </thead>
           <tbody>
             <td class="name"><%= u.name %></td>
           </tbody>
         </table>
         <% end %>
       </div>
-    </div>
   <% end %>
   </div>
 </div>
