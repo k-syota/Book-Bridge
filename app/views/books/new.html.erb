@@ -16,54 +16,58 @@
     </ul>
   <% end %>
   <div class="book_new">
-  <div class="col-xs-10">
-  <%= form_for @book do |f| %>
-  <table class="table table-bordered table-hover">
-    <tr>
-      <th class="info"><%= f.label :本のタイトル %></th>
-      <th><%= f.text_field :name,:size => "50*5" %></th>
-    </tr>
-    <tr>
-      <th class="info"><%= f.label :著者名 %></th>
-      <th>
-        <%= f.text_field :author_list,
-            :size => "50*5", value: @book.author_list.join(',')
-        %>
-      </th>
-    </tr>
-    <tr>
-      <th class="info"><%= f.label :ジャンル %></th>
-      <th>
-        <%= f.text_field :genre_list,
+    <div class="col-xs-6">
+    <div class="book_write">本の情報記入欄</div><br>
+    <%= form_for @book do |f| %>
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th class="info"><%= f.label :本のタイトル %></th>
+        <th><%= f.text_field :name,:size => "40*5" %></th>
+      </tr>
+      <tr>
+        <th class="info"><%= f.label :著者名 %></th>
+        <th>
+          <%= f.text_field :author_list,
+              :size => "40*5", value: @book.author_list.join(',')
+          %>
+        </th>
+      </tr>
+      <tr>
+        <th class="info"><%= f.label :ジャンル %></th>
+        <th>
+          <%= f.text_field :genre_list,
+                :placeholder => "２つ以上書く場合は[ , ]で分けて記入して下さい",
+                :size => "40*5", value: @book.genre_list.join(',')
+          %><br>
+          例：小説,ビジネス書
+        </th>
+      </tr>
+      <tr>
+        <th class="info"><%= f.label :タグ %></th>
+        <th>
+          <%= f.text_field :tag_list,
               :placeholder => "２つ以上書く場合は[ , ]で分けて記入して下さい",
-              :size => "50*5", value: @book.genre_list.join(',')
-        %>
-        例：小説,ビジネス書
-      </th>
-    </tr>
-    <tr>
-      <th class="info"><%= f.label :タグ %></th>
-      <th>
-        <%= f.text_field :tag_list,
-            :placeholder => "２つ以上書く場合は[ , ]で分けて記入して下さい",
-            :size => "50*5", value: @book.tag_list.join(',')
-        %>
-        例：ミステリー,ホラー,Ruby
-      </th>
-    </tr>
-  </table>
-  <div class="low">
-    <div class="col-xs-8">
-      <%= fields_for @review do |r| %>
-          <%= r.label :レビュータイトル %>
-          <%= r.text_field :title,:size => "50*5" %><br>
-          <%= r.label :本文 %><br>
-          <%= r.text_area :text,:size => "90*50" %>
-      <% end %>
+              :size => "40*5", value: @book.tag_list.join(',')
+          %><br>
+          例：ミステリー,ホラー,Ruby
+        </th>
+      </tr>
+    </table>
     </div>
-  </div>
-  <%= f.submit "投稿",class: "btn btn-primary btn-block"%>
-  <% end %>
-  </div>
+    <div class="review_new">レビュー記入欄</div><br>
+      <div class="col-xs-6">
+        <%= fields_for @review do |r| %>
+        <table class="table table-bordered table-hover">
+          <tr>
+            <%= r.label :レビュータイトル %>
+            <%= r.text_field :title,:size => "50*5" %>
+          </tr>
+        </table>
+            <%= r.label :本文 %><br>
+            <%= r.text_area :text,size: "65x7" %>
+        <% end %>
+      </div>
+    <%= f.submit "投稿",class: "btn btn-primary btn-block"%>
+    <% end %>
   </div>
 </div>

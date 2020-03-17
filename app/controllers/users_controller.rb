@@ -5,8 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @reviews = Review.where(user_id: @user.id)
-    # @reviews = @user.reviews
+    # @reviews = Review.where(user_id: @user.id)
+    @reviews = @user.reviews
     @book = Book.where(user_id: @user.id)
     # binding.pry
   end
