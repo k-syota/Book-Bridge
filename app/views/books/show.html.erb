@@ -43,10 +43,10 @@
       <% @book.reviews.each do |r| %>
       <tr>
         <td>
-          <%= link_to user_path(r.user.id) do %>
-            <%= attachment_image_tag(r.user, :image, :fill, 100, 100,
+          <%= link_to user_path(@book.user.id) do %>
+            <%= attachment_image_tag(@book.user, :image, :fill, 100, 100,
                 format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
-            <%= r.user.name%>
+            <%= @book.name%>
           <% end %>
         </td>
         <td><%= link_to book_review_path(@book, r) do %> <%# @bookでbook_idをrでreview_idを引数として持ってくる%>

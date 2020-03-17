@@ -10,7 +10,6 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @book = @review.book
     @user = @review.user
-    # binding.pry
   end
 
   def edit

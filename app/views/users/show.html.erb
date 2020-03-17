@@ -19,10 +19,10 @@
         </tr>
       </thead>
       <tbody>
-        <% @reviews.each do |r| %>
+        <% @user.reviews.each do |r| %>
         <tr class="name">
           <td>
-            <%= link_to book_path(r.book) do %>
+            <%= link_to book_path(r) do %>
               <%= r.book.name %>
             <% end %>
           </td>
@@ -42,12 +42,12 @@
           <% end %>
           </td>
           <td>
-            <%= link_to book_review_path(book_id: @book, review_id: r) do %>
-              <%= r.title %>
+            <%= link_to book_review_path(r.book, r) do %>
+              <% r.title %>
             <% end %>
           </td>
-        </tr>
         <% end %>
+        </tr>
       </tbody>
     </table>
   </div>
