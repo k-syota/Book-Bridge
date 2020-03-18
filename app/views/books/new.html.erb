@@ -54,7 +54,7 @@
             <%= r.label :レビュータイトル %>
             <%= r.text_field :title,:size => "50*5" %>
             <%= r.label :本文 %><br>
-            <%= r.text_area :text,size: "65x7" %>
+            <%= r.text_area :text,size: "64x7" %>
             <%= r.hidden_field :user_id, value: current_user.id %> <%# hidden_fieldを使ってuser_idをreviewに入れる%>
         <% end %>
       </div>

@@ -1,7 +1,7 @@
 <div class="low">
 <div class="user">プロフィール編集ページ</div>
   <% if @user.errors.any? %>
-    <h3><%= @user.errors.count %>error occurrence</h3>
+    <h3><%= @user.errors.count %>点の記入漏れがあります</h3>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
       <li><%= message %></li>

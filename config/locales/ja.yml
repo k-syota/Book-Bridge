@@ -11,4 +11,12 @@ ja:
         text: レビュー本文
   errors:
       messages:
-        not_saved: 保存されていません
+        not_saved: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+  devise:
+    sessions:
+      user:
+        signed_in: "ログインしました"
+        signed_out: "ログアウトしました"
+    failure:
+      user:
+        invalid: "入力に誤りがあります。"
