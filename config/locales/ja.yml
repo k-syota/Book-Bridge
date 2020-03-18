@@ -20,3 +20,4 @@ ja:
     failure:
       user:
         invalid: "入力に誤りがあります。"
+        unauthenticated: "ログインしてください。"
