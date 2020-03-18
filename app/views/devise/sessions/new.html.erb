@@ -1,6 +1,7 @@
 <div class="low">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="col-xs-9 col-xs-offset-1">
+    <p><font color="red"><%= flash[:notice] %></font></p>
     <font color="red"><%= alert %></font>
     <h2>ログイン画面</h2>
     <table class="table table-bordered">
@@ -19,9 +20,9 @@
         <th class="info">
           <%= f.label :パスワード %>
         </th>
-        <th>
+        <th><div class="field">
           <%= f.password_field :password, autocomplete: "current-password",:size => "50*30" %>
-        </th>
+        </div></th>
       </tr>
     </table><br>
   </div>
