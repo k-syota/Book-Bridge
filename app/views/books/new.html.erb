@@ -1,8 +1,8 @@
 <div class="low">
-  <% if @book.errors.any? %>
-    <h3><%= @book.errors.count %>点の記入漏れがあります</h3><!--エラーメッセ-->
+  <% if @new_book.errors.any? %>
+    <h3><%= @new_book.errors.count %>点の記入漏れがあります</h3><!--エラーメッセ-->
     <ul>
-      <% @book.errors.full_messages.each do |message| %>
+      <% @new_book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
       <% end %>
     </ul>
@@ -10,7 +10,7 @@
 
 
   <div class="book_new">
-    <%= form_for @book do |f| %>
+    <%= form_for @new_book do |f| %>
     <div class="col-xs-6">
     <div class="book_write">本の情報記入欄</div><br>
     <table class="table table-bordered table-hover">
@@ -22,7 +22,7 @@
         <th class="info"><%= f.label :著者名 %></th>
         <th>
           <%= f.text_field :author_list,
-              :size => "40*5", value: @book.author_list.join(',')
+              :size => "40*5", value: @new_book.author_list.join(',')
           %>
         </th>
       </tr>
@@ -31,7 +31,7 @@
         <th>
           <%= f.text_field :genre_list,
                 :placeholder => "２つ以上書く場合は[ , ]で分けて記入して下さい",
-                :size => "40*5", value: @book.genre_list.join(',')
+                :size => "40*5", value: @new_book.genre_list.join(',')
           %><br>
           例：小説,ビジネス書
         </th>
@@ -41,7 +41,7 @@
         <th>
           <%= f.text_field :tag_list,
               :placeholder => "２つ以上書く場合は[ , ]で分けて記入して下さい",
-              :size => "40*5", value: @book.tag_list.join(',')
+              :size => "40*5", value: @new_book.tag_list.join(',')
           %><br>
           例：ミステリー,ホラー,Ruby
         </th>

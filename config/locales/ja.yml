@@ -20,4 +20,5 @@ ja:
     failure:
       user:
         invalid: "入力に誤りがあります。"
+        not_found_in_database: "メールアドレスまたはパスワードが無効です。"
         unauthenticated: "ログインしてください。"

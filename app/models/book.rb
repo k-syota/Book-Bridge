@@ -10,6 +10,10 @@ class Book < ApplicationRecord
         favorites.where(user_id: user.id).exists?
     end
 
+  def in_book?
+    Book.where(name: name).exists?
+  end
+
   acts_as_taggable
   acts_as_taggable_on :authors, :genres
 end

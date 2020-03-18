@@ -1,16 +1,30 @@
 class BooksController < ApplicationController
   def new
-    @book = Book.new
-    @book.reviews.build
+    @new_book = Book.new
+    @new_book.reviews.build
   end
 
   def create
-    @book = Book.new(book_params)
-    @book.user_id = current_user.id
-    if @book.save
-      redirect_to book_path(@book)
+    @book = Book.find_by(name: params[:book][:name])
+    if @book != nil
+      if @book.in_book?
+        @book = Book.find_by(name: @book.name)
+        # @book.reviews.new(reviews_params)
+        # @book.save
+        @review = Review.new(book_params[:reviews_attributes][:"0"])
+        # book_params内のreviews_attributesからレビューの情報を"0"で引き出す
+        @review.book_id = @book.id
+        @review.save
+        redirect_to book_path(@review.book.id)
+      end
     else
-      render "new"
+        @new_book = Book.new(book_params)
+        @new_book.user_id = current_user.id
+        if @new_book.save
+          redirect_to book_path(@new_book)
+        else
+           render "new"
+        end
     end
   end
 
@@ -38,8 +52,8 @@ class BooksController < ApplicationController
       reviews_attributes:[:title, :text, :user_id, :book_id])
   end
 
-  # def reviews_params
-  #   params.require(:review).permit(:title, :text, :user_id, :book_id)
-  # end
+  def reviews_params
+    params.require(:review).permit(:title, :text, :user_id, :book_id)
+  end
 
 end
