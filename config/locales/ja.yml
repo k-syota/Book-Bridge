@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      book:
+      review:
+    attributes:
+      book:
+        name: 本のタイトル
+      reviews:
+        title: レビューのタイトル
+        text: レビュー本文
+  errors:
+      messages:
+        not_saved: 保存されていません
