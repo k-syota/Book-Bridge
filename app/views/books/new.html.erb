@@ -1,9 +1,9 @@
 <div class="low">
   <% if @new_book.errors.any? %>
-    <h3><%= @new_book.errors.count %>点の記入漏れがあります</h3><!--エラーメッセ-->
+    <h3><font color="red"><%= @new_book.errors.count %>点の記入漏れがあります</font></h3><!--エラーメッセ-->
     <ul>
       <% @new_book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+      <li><font color="red"><%= message %></font></li>
       <% end %>
     </ul>
   <% end %>
