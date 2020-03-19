@@ -1,10 +1,10 @@
 <div class="low">
 <div class="user">プロフィール編集ページ</div>
   <% if @user.errors.any? %>
-    <h3><%= @user.errors.count %>点の記入漏れがあります</h3>
+    <h3><font color="red"><%= @user.errors.count %>点の記入漏れがあります</font></h3>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+      <li><font color="red"><%= message %></font></li>
       <% end %>
     </ul>
   <% end %>
@@ -23,7 +23,10 @@
       <table class="table table-hover table-inverse">
         <tr>
           <th class="info"><%= u.label :ユーザー名 %></th>
-          <th><%= u.text_field :name, size: "30x2" %></th>
+          <th><%= u.text_field :name, :placeholder=> "2~20文字以内で記入してください",
+                  size: "30x2"
+              %>
+          </th>
         </tr>
         <tr>
           <th class="info"><%= u.label :紹介文 %></th>
