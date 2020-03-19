@@ -6,8 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @reviews = Review.where(user_id: @user.id).all
-    @reviews = Review.page(params[:page]).per(10)
+    # binding.pry
+    @reviews = Review.where(user_id: @user.id).page(params[:page]).per(5)
   end
 
   def edit
@@ -29,8 +29,8 @@ class UsersController < ApplicationController
 
   def favorite
     @user = User.find(params[:id])
-    @favorites = Favorite.where(user_id: @user.id).all
-    @favorites = Favorite.page(params[:page]).per(10)
+    @favorites = Favorite.where(user_id: @user.id).page(params[:page]).per(10)
+    # @favorites = Favorite.page(params[:page]).per(10)
   end
 
   private

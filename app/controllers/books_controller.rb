@@ -32,18 +32,15 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
     @books = Book.page(params[:page]).per(10)
     if params[:tag_name]
-      @books = Book.tagged_with("#{params[:tag_name]}")
-      @books = Book.page(params[:page]).per(10)
-      # @books = Book.page(params[:tag_name][:page]).per(10)
+      @books = Book.tagged_with(params[:tag_name]).page(params[:page]).per(10)
     end
   end
 
   def show
     @book = Book.find(params[:id])
-    @user = @book.user
+    @reviews = Review.where(book_id: @book.id).page(params[:page]).per(5)
   end
 
   private

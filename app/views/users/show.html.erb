@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @reviews.each do |r| %>
+        <% @user.reviews.each do |r| %>
         <tr class="name">
           <td>
             <%= link_to book_path(r.book) do %>
@@ -52,9 +52,9 @@
       </tbody>
     </table>
   </div>
-    <div class="col-xs-12 col-offset-5">
+  <div class="col-xs-12 col-offset-5">
   <div class ="paginate">
     <%= paginate @reviews, theme: 'custom_theme' %>
-  </div>
+  </div>]
   </div>
 </div>
