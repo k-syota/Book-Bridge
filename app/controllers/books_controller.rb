@@ -13,6 +13,9 @@ class BooksController < ApplicationController
         # @book.save
         @review = Review.new(book_params[:reviews_attributes][:"0"])
         # book_params内のreviews_attributesからレビューの情報を"0"で引き出す
+        # 以下がbook_params[:reviews_attributes]で引き出した場合の結果
+          # <ActionController::Parameters {"0"=><ActionController::Parameters
+          # {"title"=>"  ", "text"=>"  ", "user_id"=>" "} permitted: true>} permitted: true>
         @review.book_id = @book.id
         @review.save
         redirect_to book_path(@review.book.id)
@@ -30,6 +33,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @books = Book.page(params[:page])
     if params[:tag_name]
       @books = Book.tagged_with("#{params[:tag_name]}")
     end

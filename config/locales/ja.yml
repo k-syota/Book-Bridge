@@ -17,6 +17,9 @@ ja:
       user:
         signed_in: "ログインしました"
         signed_out: "ログアウトしました"
+    registrations:
+      user:
+        signed_up: "新規登録ありがとうございます"
     failure:
       user:
         invalid: "入力に誤りがあります。"

@@ -1,6 +1,7 @@
 <div class="low">
   <div class="book_index_title">本の一覧ページ</div>
   <div class="book_index">
+  <%= page_entries_info @books %>
   <table class="table table-hover table-inverse">
     <thead>
       <tr class="info">
@@ -37,5 +38,8 @@
     </tbody>
     <% end %>
   </table>
+  </div>
+  <div class ="paginate">
+    <%= paginate @books, theme: 'custom_theme' %>
   </div>
 </div>

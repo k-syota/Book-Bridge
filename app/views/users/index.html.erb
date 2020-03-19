@@ -5,7 +5,7 @@
       <div class="col-xs-3">
         <%= link_to user_path(u.id) do %>
         <table>
-            <th><%= attachment_image_tag(u, :image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %></th>
+            <th><%= attachment_image_tag(u, :image, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg", size:'150x150') %></th>
           <tbody>
             <td class="name"><%= u.name %></td>
           </tbody>
@@ -13,6 +13,9 @@
         <% end %>
       </div>
   <% end %>
+  <div class ="paginate">
+    <%= paginate @users, theme: 'custom_theme' %>
+  </div>
   </div>
 </div>
 
