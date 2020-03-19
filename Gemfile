@@ -73,3 +73,4 @@ gem 'safe_attributes' #内部処理での名前かぶりを解決
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'rails-i18n'
 gem 'devise-i18n-views'
+gem 'ransack'

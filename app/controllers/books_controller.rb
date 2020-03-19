@@ -33,7 +33,8 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    @books = Book.page(params[:page])
+    @books = Book.page(params[:page]).per(10)
+    # @books = Book.page(params[:page][:tag_name]).per(10)
     if params[:tag_name]
       @books = Book.tagged_with("#{params[:tag_name]}")
     end
