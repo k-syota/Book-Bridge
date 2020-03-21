@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :show]
   def new
     @new_book = Book.new
     @new_book.reviews.build
