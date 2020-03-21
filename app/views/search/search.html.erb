@@ -1,0 +1,9 @@
+<div class="low">
+  <% if @model == 'book' %>
+  <h3>'<%= @content %>'での検索結果</h3>
+    <%= render 'books/search', books: @records %>
+  <% end %>
+</div>
+
+<h1>Searches#search</h1>
+<p>Find me in app/views/searches/search.html.erb</p>

@@ -34,14 +34,25 @@ class BooksController < ApplicationController
   def index
     @books = Book.page(params[:page]).per(10)
     if params[:tag_name]
-      @books = Book.tagged_with(params[:tag_name]).page(params[:page]).per(10)
+      @books = Book.tagged_with(params[:tag_name]).order("name").page(params[:page]).per(10)
+      # tagged_withはtagged_with("タグ名")で検索ができるメソッド
+      # タグがクリックされた場合(tag_nameに値が入っている)tag_nameをtagged_with("タグ名")のタグ名に入れて絞り込みを実行
+      # 処理されたデータを@booksで持ち出す
+      # タグで検索されたデータは.order("name")で五十音順で表示する
     end
   end
 
   def show
     @book = Book.find(params[:id])
     @reviews = Review.where(book_id: @book.id).page(params[:page]).per(5)
+    # @reviewsで@bookのidを持つレビューを定義する
+    # 定義されたレビューを.page(params[:page]).per(5)でページング機能を使い表示する
   end
+
+  def search
+    @books = Book.order("name").page(params[:page]).per(10)
+  end
+
 
   private
 
@@ -55,8 +66,8 @@ class BooksController < ApplicationController
       reviews_attributes:[:title, :text, :user_id, :book_id])
   end
 
-  def reviews_params
-    params.require(:review).permit(:title, :text, :user_id, :book_id)
-  end
+  # def reviews_params
+  #   params.require(:review).permit(:title, :text, :user_id, :book_id)
+  # end
 
 end

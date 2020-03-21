@@ -14,6 +14,10 @@ class Book < ApplicationRecord
     Book.where(name: name).exists?
   end
 
+  def self.search(search)
+    search ? where('title LIKE ?', "%#{search}%") : all
+  end
+
   acts_as_taggable
   acts_as_taggable_on :authors, :genres
 end

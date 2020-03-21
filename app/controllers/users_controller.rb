@@ -6,8 +6,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # binding.pry
     @reviews = Review.where(user_id: @user.id).page(params[:page]).per(5)
+    # @reviewsでuserのidを持つレビューを定義する
+    # 定義されたレビューを.page(params[:page]).per(5)でページング機能を使い表示する
   end
 
   def edit
@@ -30,7 +31,8 @@ class UsersController < ApplicationController
   def favorite
     @user = User.find(params[:id])
     @favorites = Favorite.where(user_id: @user.id).page(params[:page]).per(10)
-    # @favorites = Favorite.page(params[:page]).per(10)
+    # @favoritesで@userのidを持つfavoritesを定義する
+    # 定義されたを@favoritesを.page(params[:page]).per(5)でページング機能を使い表示する
   end
 
   private
