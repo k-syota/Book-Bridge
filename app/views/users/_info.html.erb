@@ -1,17 +1,18 @@
 <div class="name">
-<table class="table">
-    <tr><%= attachment_image_tag(user, :image, format: 'jpeg',
-    class: "img-circle pull-left profile-img", fallback: "no_image.jpg", size:'100x100') %>
-    </tr>
-    <tr>
-      <th class="info">ユーザー名</th>
-      <th><%= user.name %></th>
-    </tr>
+  <div class="user">ユーザー情報</div>
+    <table class="table">
+        <tr><%= attachment_image_tag(user, :image, format: 'jpeg',
+        class: "img-circle pull-left profile-img", fallback: "no_image.jpg", size:'100x100') %>
+        </tr>
+        <tr>
+          <th class="info">ユーザー名</th>
+          <th><%= user.name %></th>
+        </tr>
 
-    <tr>
-      <th class="info">自己紹介</th>
-      <th><%= user.introduction %></th>
-    </tr>
-</table>
-  <%= link_to "マイリスト", favorite_path(user),class: "btn btn-primary btn-block" %>
+        <tr>
+          <th class="info">自己紹介</th>
+          <th><%= user.introduction %></th>
+        </tr>
+    </table>
+      <%= link_to "マイリスト", favorite_path(user),class: "btn btn-primary btn-block" %>
 </div>

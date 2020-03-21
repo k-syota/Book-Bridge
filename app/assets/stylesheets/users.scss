@@ -3,11 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .low {
-  margin-top: 100px;
+  padding-top: 50px;
+}
+
+
+.mypage {
+  font-size: 25px;
+  font-family: serif;
 }
 
 .user {
-  font-size: 25px;
+  font-size: 20px;
   font-family: serif;
 }
 
@@ -50,6 +56,16 @@
 div.field_with_errors {
   background-color: #fcc;
   padding: 2px;
+}
+
+.mylist {
+  font-size: 30px;
+  font-family: serif;
+}
+
+.mylist_table {
+  font-size: 15px;
+  font-family: serif;
 }
 
 .error {

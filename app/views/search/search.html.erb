@@ -1,6 +1,7 @@
 <div class="low">
   <% if @model == 'book' %>
-  <h3>'<%= @content %>'での検索結果</h3>
+  <div class="search_title">'<%= @content %>'での検索結果</div>
+    <div class="top_paginate"><%= page_entries_info @records %></div>
     <%= render 'books/search', books: @records %>
   <% end %>
 </div>

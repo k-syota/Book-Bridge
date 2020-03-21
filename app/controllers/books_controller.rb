@@ -50,7 +50,6 @@ class BooksController < ApplicationController
   end
 
   def search
-    @books = Book.order("name").page(params[:page]).per(10)
   end
 
 
