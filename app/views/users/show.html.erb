@@ -1,7 +1,7 @@
 <div class="low">
+  <p class="notice"><%= notice %></p>
   <div class="col-xs-3">
-  <div class="mypage">マイページ</div>
-  <p><%= notice %></p>
+  <div class="mypage">ユーザー詳細</div>
     <%= render 'users/info', user: @user %>
     <% if @user == current_user %><br>
     <div class="name">
@@ -20,6 +20,7 @@
         </tr>
       </thead>
       <tbody>
+        <div class="user_review">投稿したレビュー一覧</div>
         <% @user.reviews.each do |r| %>
         <tr class="name">
           <td>
