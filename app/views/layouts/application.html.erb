@@ -37,12 +37,17 @@
       </div>
         <% if user_signed_in? %>
           <div class="search">
-            <%= form_tag(search_path, method: :get) do %>
-              <%= text_field_tag 'search[content]' %>
-              <%= select_tag 'search[model]', options_for_select({ "本の題名" => "book"}) %>
-              <%= select_tag 'search[method]', options_for_select({ "完全一致" => "perfect", "部分一致" => "partial" }) %>
-              <%= submit_tag '検索' %>
-            <% end %>
+          <%= search_form_for(@search, url:book_search_path) do |f| %>
+            <%= f.label :本のタイトル %>
+            <%= f.search_field :name_cont, placeholder: '本のタイトルで検索' %>
+            <%= f.label :著者名 %>
+            <%= f.search_field :authors_name_cont, placeholder: '著者名で検索' %>
+            <%= f.label :ジャンル %>
+            <%= f.search_field :genres_name_cont, placeholder: 'ジャンルで検索' %>
+            <%= f.label :タグ %>
+            <%= f.search_field :tags_name_cont, placeholder: 'タグで検索' %>
+            <%= f.submit '検索' %>
+          <% end %>
           </div>
         <% end %>
     </header>

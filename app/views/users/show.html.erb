@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <div class="user_review">投稿したレビュー一覧</div>
+        <div class="user_review"><%= @user.name %>さんが投稿したレビュー一覧</div>
         <% @user.reviews.each do |r| %>
         <tr class="name">
           <td>

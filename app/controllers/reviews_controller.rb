@@ -1,19 +1,19 @@
 class ReviewsController < ApplicationController
   def create
-    @book = Book.find(params[:book_id])
-    @review = Review.new(review_params)
-    @review.save
-    redirect_to book_path(@book)
   end
 
   def show
     @review = Review.find(params[:id])
     @book = @review.book
     @user = @review.user
+    @search = Book.ransack(params[:q])
+    @results = @search.result.order("name").page(params[:page]).per(10)
   end
 
   def edit
     @review = Review.find(params[:id])
+    @search = Book.ransack(params[:q])
+    @results = @search.result.order("name").page(params[:page]).per(10)
   end
 
   def update
@@ -26,8 +26,8 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:book_id])
-    @book = Book.find(params[:id])
+    @review = Review.find(params[:id])
+    @book = Book.find(params[:book_id])
     @review.destroy
     redirect_to book_path(@book)
   end

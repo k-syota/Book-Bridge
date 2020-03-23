@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :reviews, only:[:create, :show, :edit, :update, :destroy]
     resource :favorites, only:[:create, :destroy]
   end
+  get "book_search", to:"books#search"
+  post "book_search", to:"books#search"
   resources :authors, only:[:create]
   get "search", to: "search#search"
   get "about", to: "homes#about"

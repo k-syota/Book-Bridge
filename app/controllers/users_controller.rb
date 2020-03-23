@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @users = User.page(params[:page]).per(8)
+    @search = Book.ransack(params[:q])
+    @results = @search.result.order("name").page(params[:page]).per(10)
   end
 
   def show
@@ -9,6 +11,8 @@ class UsersController < ApplicationController
     @reviews = Review.where(user_id: @user.id).page(params[:page]).per(5)
     # @reviewsでuserのidを持つレビューを定義する
     # 定義されたレビューを.page(params[:page]).per(5)でページング機能を使い表示する
+    @search = Book.ransack(params[:q])
+    @results = @search.result.order("name").page(params[:page]).per(10)
   end
 
   def edit
@@ -16,6 +20,8 @@ class UsersController < ApplicationController
     if @user.id == current_user.id
     else redirect_to books_path
     end
+    @search = Book.ransack(params[:q])
+    @results = @search.result.order("name").page(params[:page]).per(10)
   end
 
   def update
@@ -33,6 +39,8 @@ class UsersController < ApplicationController
     @favorites = Favorite.where(user_id: @user.id).page(params[:page]).per(10)
     # @favoritesで@userのidを持つfavoritesを定義する
     # 定義されたを@favoritesを.page(params[:page]).per(5)でページング機能を使い表示する
+    @search = Book.ransack(params[:q])
+    @results = @search.result.order("name").page(params[:page]).per(10)
   end
 
   private

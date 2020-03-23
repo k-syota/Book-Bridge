@@ -3,6 +3,8 @@ class BooksController < ApplicationController
   def new
     @new_book = Book.new
     @new_book.reviews.build
+    @search = Book.ransack(params[:q])
+    @results = @search.result.order("name").page(params[:page]).per(10)
   end
 
   def create
@@ -34,6 +36,8 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.page(params[:page]).per(10)
+    @search = Book.ransack(params[:q])
+    @results = @search.result.order("name").page(params[:page]).per(10)
     if params[:tag_name]
       @books = Book.tagged_with(params[:tag_name]).order("name").page(params[:page]).per(10)
       # tagged_withはtagged_with("タグ名")で検索ができるメソッド
@@ -48,11 +52,15 @@ class BooksController < ApplicationController
     @reviews = Review.where(book_id: @book.id).page(params[:page]).per(5)
     # @reviewsで@bookのidを持つレビューを定義する
     # 定義されたレビューを.page(params[:page]).per(5)でページング機能を使い表示する
+    @search = Book.ransack(params[:q])
+    @results = @search.result.order("name").page(params[:page]).per(10)
   end
 
   def search
+  @search = Book.ransack(params[:q])
+  # binding.pry
+  @results = @search.result.order("name").page(params[:page]).per(10)
   end
-
 
   private
 
@@ -66,8 +74,5 @@ class BooksController < ApplicationController
       reviews_attributes:[:title, :text, :user_id, :book_id])
   end
 
-  # def reviews_params
-  #   params.require(:review).permit(:title, :text, :user_id, :book_id)
-  # end
 
 end

@@ -1,0 +1,35 @@
+<div class="low">
+    <div class="search_title">検索結果一覧</div>
+  <table class="table table-hover table-inverse">
+    <tr class="info">
+      <th>本のタイトル</th>
+      <th>著者名</th>
+      <th>ジャンル</th>
+      <th>タグ</th>
+    </tr>
+    <% @results.each do |f| %>
+    <tr>
+      <td>
+          <%= link_to (f) do %>
+            <%= f.name %>
+          <% end %>
+      </td>
+      <td>
+          <%= render 'books/author_list', author_list: f.author_list do %>
+            <%= f.author_list %>
+          <% end %>
+      </td>
+      <td>
+          <%= render 'books/genre_list', genre_list: f.genre_list do %>
+          <%= f.genre_list %>
+          <% end %>
+      </td>
+      <td>
+          <%= render 'books/tag_list', tag_list: f.tag_list do %>
+          <%= f.tag_list %>
+          <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
