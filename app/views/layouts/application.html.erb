@@ -35,21 +35,21 @@
           </ul>
         </nav>
       </div>
-        <% if user_signed_in? %>
-          <div class="search">
-          <%= search_form_for(@search, url:book_search_path) do |f| %>
-            <%= f.label :本のタイトル %>
-            <%= f.search_field :name_cont, placeholder: '本のタイトルで検索' %>
-            <%= f.label :著者名 %>
-            <%= f.search_field :authors_name_cont, placeholder: '著者名で検索' %>
-            <%= f.label :ジャンル %>
-            <%= f.search_field :genres_name_cont, placeholder: 'ジャンルで検索' %>
-            <%= f.label :タグ %>
-            <%= f.search_field :tags_name_cont, placeholder: 'タグで検索' %>
-            <%= f.submit '検索',class: "btn btn-primary btn-sm" %>
-          <% end %>
-          </div>
+      <% if user_signed_in? %>
+      <div class="search">
+        <%= search_form_for(@search, url:book_search_path) do |f| %>
+          <%= f.label :本のタイトル %>
+          <%= f.search_field :name_cont, placeholder: '本のタイトルで検索' %>
+          <%= f.label :著者名 %>
+          <%= f.search_field :authors_name_cont, placeholder: '著者名で検索' %>
+          <%= f.label :ジャンル %>
+          <%= f.search_field :genres_name_cont, placeholder: 'ジャンルで検索' %>
+          <%= f.label :タグ %>
+          <%= f.search_field :tags_name_cont, placeholder: 'タグで検索' %>
+          <%= f.submit '検索',class: "btn btn-primary btn-sm" %>
         <% end %>
+      </div>
+      <% end %>
     </header>
   <%# headerの記載 %>
   <body>

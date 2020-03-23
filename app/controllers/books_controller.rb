@@ -1,16 +1,20 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show]
+  # 未ログイン者の新規投稿と詳細画面の閲覧以外の動作を許可する
+  # 検索画面についてはログインなしの場合は見れない様に設定
   def new
     @new_book = Book.new
     @new_book.reviews.build
+    # bookとreviewを同時保存するためにbuildを使用
+    # 理由はエラーメッセージをエラー内容に合わせて表示させるため
     @search = Book.ransack(params[:q])
     @results = @search.result.order("name").page(params[:page]).per(10)
   end
 
   def create
     @book = Book.find_by(name: params[:book][:name])
-    if @book != nil
-      if @book.in_book?
+    if  @book != nil
+      if  @book.in_book? #bookのデータベース内に[:name]で被るモノがあるか確認する
         @book = Book.find_by(name: @book.name)
         # @book.reviews.new(reviews_params)
         # @book.save
@@ -25,8 +29,9 @@ class BooksController < ApplicationController
       end
     else
         @new_book = Book.new(book_params)
-        @new_book.user_id = current_user.id
+        # @new_book.user_id = current_user.id
         if @new_book.save
+          # binding.pry
           redirect_to book_path(@new_book)
         else
            render "new"
@@ -53,12 +58,15 @@ class BooksController < ApplicationController
     # @reviewsで@bookのidを持つレビューを定義する
     # 定義されたレビューを.page(params[:page]).per(5)でページング機能を使い表示する
     @search = Book.ransack(params[:q])
+    # @search = Book.ransack(params[:q])は
+    # ユーザーが入力したキーワード（params[:q]）を持つデータをBookテーブルから探し（Book.ransack）
+    # そのデータを@searchに格納する
     @results = @search.result.order("name").page(params[:page]).per(10)
+    # @searchはransackで指定したカラムからキーワードを含むものを抽出、データが足りないからresultで補う
   end
 
   def search
   @search = Book.ransack(params[:q])
-  # binding.pry
   @results = @search.result.order("name").page(params[:page]).per(10)
   end
 
