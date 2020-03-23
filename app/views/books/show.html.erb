@@ -16,6 +16,22 @@
           <% end %>
         </td>
       </tr>
+      <tr>
+        <td class="info">ジャンル</td>
+        <td>
+          <%= render 'books/genre_list', genre_list: @book.genre_list do %>
+          <%= @book.genre_list %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td class="info">タグ</td>
+        <td>
+          <%= render 'books/tag_list', tag_list: @book.tag_list do %>
+          <%= @book.tag_list %>
+          <% end %>
+        </td>
+      </tr>
     </tbody>
   </table>
         <% if @book.favorited_by?(current_user) %>
