@@ -26,6 +26,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @search = Book.ransack(params[:q])
+    @results = @search.result.order("name").page(params[:page]).per(10)
     if @user.update(user_params)
         redirect_to user_path(@user.id)
     else

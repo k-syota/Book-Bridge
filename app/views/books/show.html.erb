@@ -10,7 +10,11 @@
       </tr>
       <tr>
         <td class="info">著者名</td>
-        <td><%= @book.author_list %></td>
+        <td>
+          <%= render 'books/author_list', author_list: @book.author_list do %>
+          <%= @book.author_list %>
+          <% end %>
+        </td>
       </tr>
     </tbody>
   </table>

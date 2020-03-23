@@ -13,6 +13,8 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.find_by(name: params[:book][:name])
+    @search = Book.ransack(params[:q])
+    @results = @search.result.order("name").page(params[:page]).per(10)
     if  @book != nil
       if  @book.in_book? #bookのデータベース内に[:name]で被るモノがあるか確認する
         @book = Book.find_by(name: @book.name)
