@@ -1,13 +1,16 @@
 <div class="low">
   <div class="search_title">検索結果一覧</div>
   <table class="table table-hover table-inverse">
+    <thead>
     <tr class="info">
       <th>本のタイトル</th>
       <th>著者名</th>
       <th>ジャンル</th>
       <th>タグ</th>
     </tr>
+    </thead>
     <% @results.each do |f| %>
+    <tbody>
     <tr>
       <td>
           <%= link_to (f) do %>
@@ -30,6 +33,7 @@
           <% end %>
       </td>
     </tr>
+    </tbody>
     <% end %>
   </table>
   <div class ="paginate">
