@@ -12,9 +12,7 @@ If you use this app, you can post and share reviews of your favorite books
 <br>
 You can look for one's favorite books from various sources including authors and genres.
 <br>
-If you have any books you like,
-<br>
-i can put them on * for reference when i purchase them
+If you have any books you like, i can put them on * for reference when i purchase them
 
 ##Demo Image
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/new_book.jpg)
