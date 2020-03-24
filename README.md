@@ -1,8 +1,8 @@
 # Book-Bridge📘
 
 ## Description
-If you use this app, you can post and share reviews of your favorite books
-you want to look for one's favorite books from various sources including authors and genres
+If you use this app, you can post and share reviews of your favorite books.
+you want to look for one's favorite books from various sources including authors and genres.
 
 
 ***Image:***
