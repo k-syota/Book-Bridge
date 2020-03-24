@@ -3,9 +3,8 @@
 
 ## Table of Contents
 * [Description](#Description)
-* [Image](#Image)
+* [Demo Image](#Demo-Image)
 * [Downloading and installing steps](#Downloading-and-installing-steps)
-* [Features](#Features)
 
 ## Description
 If you use this app, you can post and share reviews of your favorite books
@@ -16,7 +15,7 @@ If you have any books you like,
 <br>
 i can put them on * for reference when i purchase them
 
-## Image
+##Demo Image
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/new_book.jpg)
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/book_show.jpg)
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/book_index.jpg)
@@ -53,12 +52,12 @@ $ rake acts_as_taggable_on_engine:install:migrations
 $ bin/rails db:migrate
 ```
 
+7. Run the app
+```bash
+$ bin/rails s
+```
+
 ## Features
 * keyword search function
 * tag retrieval function
 * mylist function
-
-## Usage
-* Share your favorite books and reviews from new posts
-* Use one's search function to find a book of interest
-* Refer to a review to help someone buy a book
