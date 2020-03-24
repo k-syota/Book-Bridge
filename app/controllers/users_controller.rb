@@ -18,7 +18,8 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     if @user.id == current_user.id
-    else redirect_to books_path
+    else redirect_to edit_user_path(current_user.id)
+      # URLを直接書いた場合でも入れない様に記述
     end
     @search = Book.ransack(params[:q])
     @results = @search.result.order("name").page(params[:page]).per(10)
