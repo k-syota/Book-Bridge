@@ -2,7 +2,6 @@
 
 
 ## Table of Contents
-<br>
 * Description
 <br>
 * Image
