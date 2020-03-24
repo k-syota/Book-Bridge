@@ -1,8 +1,8 @@
 # Book-Bridge📘
 
-1. [About](#About)
-2. [Image](#Image)
-3. [Downloading and installing steps](#Downloading and installing steps)
+1. [About](##About)
+2. [Image](##Image)
+3. [Downloading and installing steps](##Downloading%and%installing%steps)
 
 ## Description
 If you use this app, you can post and share reviews of your favorite books
