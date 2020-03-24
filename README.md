@@ -3,9 +3,7 @@
 
 ## Table of Contents
 * Description
-<br>
 * Image
-<br>
 * Downloading and installing steps
 
 ## Description
