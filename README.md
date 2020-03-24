@@ -59,6 +59,6 @@ $ bin/rails s
 ```
 
 ## Features
-* keyword search function
-* tag retrieval function
-* mylist function
+* Keyword search function
+* Tag retrieval function
+* Mylist function
