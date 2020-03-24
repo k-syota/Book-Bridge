@@ -12,6 +12,10 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    if @review.user_id == current_user.id
+    else redirect_to book_path(@review.book.id)
+      # URLを直接書いた場合でも入れない様に記述
+    end
     @search = Book.ransack(params[:q])
     @results = @search.result.order("name").page(params[:page]).per(10)
   end
