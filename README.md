@@ -5,6 +5,7 @@
 * [Description](#Description)
 * [Demo Image](#Demo-Image)
 * [Downloading and installing steps](#Downloading-and-installing-steps)
+* [Features](#Features)
 
 ## Description
 If you use this app, you can post and share reviews of your favorite books
