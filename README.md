@@ -1,10 +1,12 @@
 # Book-Bridge📘
 
 
-# Table of Contents
+## Table of Contents
 <br>
 * Description
+<br>
 * Image
+<br>
 * Downloading and installing steps
 
 ## Description
