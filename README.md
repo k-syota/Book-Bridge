@@ -22,3 +22,24 @@ $ git clone https://github.com/Nishimurasyota/Book-Bridge.git
 ```bash
 $ cd Book-Bridge
 ```
+
+3. Gem install
+
+```bash
+$ bundle install
+```
+
+4. Initial devise configuration
+```bash
+$ rails g devise:install
+```
+
+5. Prepare a table for tags
+```bash
+$ rake acts_as_taggable_on_engine:install:migrations
+```
+
+6. Create table
+```bash
+$ bin/rails db:migrate
+```
