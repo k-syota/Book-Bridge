@@ -4,8 +4,10 @@
 ## Table of Contents
 * [Description](#Description)
 * [Demo Image](#Demo-Image)
+* [Requirement](#Requirement)
 * [Downloading and installing steps](#Downloading-and-installing-steps)
 * [Features](#Features)
+* [Author](#Author)
 
 ## Description
 If you use this app, you can post and share reviews of your favorite books.
@@ -18,6 +20,10 @@ If you have any books you like, I can put them on for reference when I purchase 
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/new_book.jpg)
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/book_show.jpg)
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/book_index.jpg)
+
+## Requirement
+* Ruby 2.5.7
+* Rails 5.2.4.1
 
 ## Downloading and installing steps
 
@@ -36,22 +42,17 @@ $ cd Book-Bridge
 $ bundle install
 ```
 
-4. Initial devise configuration
-```bash
-$ rails g devise:install
-```
-
-5. Prepare a table for tags
+4. Prepare a table for tags
 ```bash
 $ rake acts_as_taggable_on_engine:install:migrations
 ```
 
-6. Create table
+5. Create table
 ```bash
 $ bin/rails db:migrate
 ```
 
-7. Run the app
+5. Run the app
 ```bash
 $ bin/rails s
 ```
@@ -60,3 +61,7 @@ $ bin/rails s
 * Keyword search function
 * Tag retrieval function
 * Mylist function
+
+## Author
+* name: Nishimurasyota
+* [Github](https://github.com/Nishimurasyota)
