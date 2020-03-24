@@ -14,7 +14,7 @@ You can look for one's favorite books from various sources including authors and
 <br>
 If you have any books you like, I can put them on for reference when I purchase them
 
-##Demo Image
+## Demo Image
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/new_book.jpg)
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/book_show.jpg)
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/book_index.jpg)
