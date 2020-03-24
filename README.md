@@ -1,6 +1,6 @@
 # Book-Bridge📘
 
-1. [About](##About)
+1. [Description](##Description)
 1. [Image](##Image)
 1. [Downloading and installing steps](##Downloading%and%installing%steps)
 
@@ -9,12 +9,12 @@ If you use this app, you can post and share reviews of your favorite books
 <br>
 you can look for one's favorite books from various sources including authors and genres.
 
-##Image##
+##Image
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/new_book.jpg)
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/book_show.jpg)
 ![Image](https://github.com/Nishimurasyota/Book-Bridge/blob/master/app/assets/images/book_index.jpg)
 
-##Downloading and installing steps##
+##Downloading and installing steps
 
 1. Clone this repository
 
