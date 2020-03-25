@@ -1,5 +1,4 @@
 <div class="low">
-<div class="edit_user">プロフィール編集ページ</div>
   <% if @user.errors.any? %>
     <h3><font color="red"><%= @user.errors.count %>点の記入漏れがあります</font></h3>
     <ul>
@@ -8,6 +7,7 @@
       <% end %>
     </ul>
   <% end %>
+  <div class="edit_user">プロフィール編集ページ</div>
   <%= attachment_image_tag(@user, :image, :fill, 100, 100, format: 'jpeg',
       class: "img-circle pull-left profile-img", fallback: "no_image.jpg") %>
   <%= form_for(@user) do |u| %>
