@@ -4,14 +4,18 @@ ja:
       book:
       review:
     attributes:
+      # 新規投稿でのエラーメッセージを日本語に変換
       book:
         name: 本のタイトル
       reviews:
         title: レビューのタイトル
         text: レビュー本文
+      # 新規投稿でのエラーメッセージを日本語に変換
+      # レビュー編集でのエラーメッセージを日本語に変換
       review:
         title: レビューのタイトル
         text: レビュー本文
+      # レビュー編集でのエラーメッセージを日本語に変換
   errors:
       messages:
         not_saved: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
