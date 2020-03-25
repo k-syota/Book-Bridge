@@ -9,6 +9,9 @@ ja:
       reviews:
         title: レビューのタイトル
         text: レビュー本文
+      review:
+        title: レビューのタイトル
+        text: レビュー本文
   errors:
       messages:
         not_saved: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
