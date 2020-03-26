@@ -21,7 +21,7 @@
       </thead>
       <tbody>
         <div class="user_review"><%= @user.name %>さんが投稿したレビュー一覧</div>
-        <% @user.reviews.each do |r| %>
+        <% @reviews.each do |r| %>
         <tr class="name">
           <td>
             <%= link_to book_path(r.book) do %>
