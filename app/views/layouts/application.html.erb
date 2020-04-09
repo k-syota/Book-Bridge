@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <%# headerの記載 %>
-    <header class="navbar navbar-fixed-top" style="background-color: #99FF33;">
+    <header class="navbar navbar-fixed-top">
       <div class="container">
         <nav class="nav navbar-nav navbar-left">
           <span>Book-Bridge</span>
@@ -50,20 +50,60 @@
         <% end %>
       </div>
       <% end %>
+        <div id="sp-menu">
+          <h2>MENU</h2>
+          <% if user_signed_in? %>
+          <ul>
+            <li><%= link_to current_user.name, user_path(current_user.id) %></li>
+            <li><%= link_to ' ログアウト', destroy_user_session_path,
+                    method: :delete, class: 'glyphicon glyphicon-log-out logout'
+                %>
+            </li>
+            <li><%= link_to ' 新規投稿', new_book_path, class: 'glyphicon glyphicon-pencil 新規投稿' %></li>
+            <li><%= link_to ' 本の一覧', books_path, class: 'glyphicon glyphicon-book Book一覧' %></li>
+            <li><%= link_to ' ユーザー一覧', users_path, class: 'glyphicon glyphicon-user ユーザー一覧' %></li>
+          </ul>
+          <% else %>
+            <li><%= link_to ' トップページ', root_path, class: 'glyphicon glyphicon-home home' %></li>
+            <li><%= link_to ' 新規登録', new_user_registration_path, class: 'glyphicon glyphicon-edit sign_up' %></li>
+            <li><%= link_to ' ログイン', new_user_session_path, class: 'glyphicon glyphicon-log-in sign_in' %></li>
+          <% end %>
+        </div>
+
+      <div id="hm-icon">
+        <a class="menu-trigger" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+
+      <script>
+        $(function() {
+
+          $('.menu-trigger').on('click', function() {
+            $(this).toggleClass('active');
+            $('#sp-menu').fadeToggle();
+            return false;
+          });
+
+         });
+      </script>
+
     </header>
-  <%# headerの記載 %>
-  <body>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
-  <%# footerの記載%>
-  <footer>
-    <div class="container">
-      <footer class="nav navbar-nav navbar-right">
-        <%= link_to "当サイトについて", about_path %>
-      </footer>
-    </div>
-  </footer>
-  <%# footerの記載%>
+    <%# headerの記載 %>
+    <body>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </body>
+    <%# footerの記載%>
+    <footer>
+      <div class="container">
+        <footer class="nav navbar-nav navbar-right">
+          <%= link_to "当サイトについて", about_path %>
+        </footer>
+      </div>
+    </footer>
+    <%# footerの記載%>
 </html>
