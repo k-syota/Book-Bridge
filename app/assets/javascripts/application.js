@@ -27,7 +27,7 @@ $(function() {
 
 $(function() {
   $('.menu a').mouseover(function(){
-    $(this).css('color','red');
+    $(this).css('color','#88FFFF');
   });
   $('.menu a').mouseout(function(){
     $(this).css('color','white');
