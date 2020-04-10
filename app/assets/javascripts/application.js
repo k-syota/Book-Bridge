@@ -24,3 +24,12 @@ $(function() {
   });
 
  });
+
+$(function() {
+  $('li').mouseover(function(){
+    $(this).css('color','red');
+  });
+  $('li').mouseout(function(){
+    $(this).css('color','white');
+  });
+});
