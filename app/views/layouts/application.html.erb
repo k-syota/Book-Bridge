@@ -57,7 +57,7 @@
           <%= f.label :本のタイトル %>
           <%= f.search_field :name_cont, placeholder: '本のタイトルで検索' %>
           <%= f.label :著者名 %>
-          <%= f.search_field :authors_name_cont, placeholder: '著者名で検索' %>
+          <%= f.search_field :authors_name_cont, placeholder: '著者名で検索' %><br>
           <%= f.label :ジャンル %>
           <%= f.search_field :genres_name_cont, placeholder: 'ジャンルで検索' %>
           <%= f.label :タグ %>
@@ -76,17 +76,6 @@
         </a>
       </div>
 
-      <script>
-        $(function() {
-
-          $('.menu-trigger').on('click', function() {
-            $(this).toggleClass('active');
-            $('#sp-menu').fadeToggle();
-            return false;
-          });
-
-         });
-      </script>
 
     </header>
     <%# headerの記載 %>
