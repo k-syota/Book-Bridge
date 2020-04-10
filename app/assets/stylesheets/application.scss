@@ -135,7 +135,7 @@ footer .navbar-right{
   font-family: serif;
 }
 
-#sp-menu li{
+#sp-menu .menu{
   text-align: center;
   margin-bottom: 30px;
 }
@@ -146,6 +146,8 @@ footer .navbar-right{
   text-decoration: none;
   font-weight: bold;
   font-family: serif;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 #sp-menu .search{

@@ -38,27 +38,36 @@
         <div id="sp-menu">
           <h2>MENU</h2>
           <% if user_signed_in? %>
-            <li><%= link_to current_user.name, user_path(current_user.id) %></li>
-            <li><%= link_to new_book_path do %>
+            <div class="menu"><%= link_to current_user.name, user_path(current_user.id) %></div>
+            <div class="menu"><%= link_to new_book_path do %>
               <i class="glyphicon glyphicon-pencil"></i>
               新規投稿
-            <% end %></li>
-            <li><%= link_to users_path do %>
+            <% end %></div>
+            <div class="menu"><%= link_to users_path do %>
               <i class="glyphicon glyphicon-user"></i>
               ユーザー一覧
-            <% end %></li>
-            <li><%= link_to books_path do %>
+            <% end %></div>
+            <div class="menu"><%= link_to books_path do %>
               <i class="glyphicon glyphicon-book"></i>
               本一覧
-            <% end %></li>
-            <li><%= link_to destroy_user_session_path, method: :delete do %>
+            <% end %></div>
+            <div class="menu"><%= link_to destroy_user_session_path, method: :delete do %>
               <i class="glyphicon glyphicon-log-out"></i>
               ログアウト
-            <% end %></li>
+            <% end %></div>
           <% else %>
-            <li><%= link_to root_path do %><i class="glyphicon glyphicon-home home"></i>トップページ<% end %></li>
-            <li><%= link_to new_user_registration_path do %><i class="glyphicon glyphicon-edit"></i>新規登録<% end %></li>
-            <li><%= link_to new_user_session_path do %><i class="glyphicon glyphicon-log-in"></i>ログイン<% end %></li>
+            <div class="menu"><%= link_to root_path do %>
+              <i class="glyphicon glyphicon-home home"></i>
+              トップページ
+            <% end %></div>
+            <div class="menu"><%= link_to new_user_registration_path do %>
+              <i class="glyphicon glyphicon-edit"></i>
+              新規登録
+            <% end %></div>
+            <div class="menu"><%= link_to new_user_session_path do %>
+              <i class="glyphicon glyphicon-log-in"></i>
+              ログイン
+            <% end %></div>
           <% end %>
       <% if user_signed_in? %>
       <div class="search">

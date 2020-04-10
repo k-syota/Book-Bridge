@@ -26,10 +26,10 @@ $(function() {
  });
 
 $(function() {
-  $('li').mouseover(function(){
+  $('a').mouseover(function(){
     $(this).css('color','red');
   });
-  $('li').mouseout(function(){
+  $('a').mouseout(function(){
     $(this).css('color','white');
   });
 });
