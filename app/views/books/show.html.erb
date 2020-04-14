@@ -34,17 +34,9 @@
       </tr>
     </tbody>
   </table>
-        <% if @book.favorited_by?(current_user) %>
-          <%= link_to "マイリストから外す",
-              book_favorites_path(@book, redirect_id: 0),
-              method: :delete,class: "btn btn-danger btn-sm"
-          %>
-        <% else %>
-          <%= link_to "マイリストに追加",
-              book_favorites_path(@book, redirect_id: 0),
-              method: :post,class: "btn btn-primary btn-sm"
-          %>
-        <% end %>
+  <div id="favorite_btn_<%= @book.id %>">
+     <%= render partial: 'books/favorite' %>
+  </div>
   </div>
   </div>
 <%# レビュー一覧表示%>
